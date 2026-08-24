@@ -4161,74 +4161,6 @@ body,
                 observer.observe(element)
         );
 
-
-        /* =========================
-           CONTACT FORM
-        ========================= */
-
-        const contactForm =
-            document.getElementById(
-                "contactForm"
-            );
-
-
-        contactForm.addEventListener(
-            "submit",
-            function(event) {
-
-                event.preventDefault();
-
-
-                const name =
-                    document.getElementById(
-                        "name"
-                    ).value;
-
-
-                const email =
-                    document.getElementById(
-                        "email"
-                    ).value;
-
-
-                const phone =
-                    document.getElementById(
-                        "phone"
-                    ).value;
-
-
-                const work =
-                    document.getElementById(
-                        "work"
-                    ).value;
-
-
-                const message =
-                    document.getElementById(
-                        "message"
-                    ).value;
-
-
-                const subject =
-                    encodeURIComponent(
-                        `Portfolio Inquiry — ${work}`
-                    );
-
-
-                const body =
-                    encodeURIComponent(
-                        `Name: ${name}\n` +
-                        `Email: ${email}\n` +
-                        `Phone: ${phone}\n` +
-                        `Type of Work: ${work}\n\n` +
-                        `Message:\n${message}`
-                    );
-
-
-            }
-        );
-
-
         /* =========================
            MOUSE PARALLAX
         ========================= */
@@ -5185,23 +5117,23 @@ document.addEventListener("DOMContentLoaded", function () {
         try {
 
             const response = await fetch(
-                "/send-inquiry",
-                {
-                    method: "POST",
+               "https://formsubmit.co/kamilahmadkhan666@gmail.com",
+            {
+            method: "POST",
 
-                    headers: {
-                        "Content-Type": "application/json"
-                    },
+             headers: {
+               "Content-Type": "application/json"
+            },
 
-                    body: JSON.stringify({
-                        name: name,
-                        email: email,
-                        phone: phone,
-                        work: work,
-                        message: message
-                    })
-                }
-            );
+             body: JSON.stringify({
+                name: name,
+                email: email,
+                phone: phone,
+                work: work,
+                message: message
+                })
+            }
+        );
 
             const data = await response.json();
 
