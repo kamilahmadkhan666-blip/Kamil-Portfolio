@@ -3960,7 +3960,13 @@ body,
                     <form
                         class="contact-form reveal"
                         id="contactForm"
+                        action="https://formsubmit.co/kamilahmadkhan666@gmail.com"
+                        method="POST"
                     >
+
+                       <input type="hidden" name="_subject" value="New Portfolio Inquiry">
+                       <input type="hidden" name="_captcha" value="true">
+                       <input type="hidden" name="_template" value="table">
 
 
                         <div class="input-group">
@@ -5091,85 +5097,6 @@ body,
 
 
     </script>
-
-<script>
-
-document.addEventListener("DOMContentLoaded", function () {
-
-    const form = document.getElementById("contactForm");
-    const submitButton = form.querySelector(".submit-btn");
-
-    form.addEventListener("submit", async function (e) {
-
-        e.preventDefault();
-
-        console.log("FORM SUBMITTED");
-
-        const name = document.getElementById("name").value;
-        const email = document.getElementById("email").value;
-        const phone = document.getElementById("phone").value;
-        const work = document.getElementById("work").value;
-        const message = document.getElementById("message").value;
-
-        submitButton.textContent = "Sending...";
-        submitButton.disabled = true;
-
-        try {
-
-            const response = await fetch(
-               "https://formsubmit.co/ajax/kamilahmadkhan666@gmail.com",
-            {
-            method: "POST",
-
-             headers: {
-               "Content-Type": "application/json"
-            },
-
-             body: JSON.stringify({
-                name: name,
-                email: email,
-                phone: phone,
-                work: work,
-                message: message
-                })
-            }
-        );
-
-            const data = await response.json();
-
-            console.log("SERVER RESPONSE:", data);
-
-            if (data.success) {
-
-                alert("Inquiry sent successfully!");
-
-                form.reset();
-
-            } else {
-
-                alert("Failed to send inquiry.");
-
-            }
-
-        } catch (error) {
-
-            console.error("FORM ERROR:", error);
-
-            alert("Could not connect to the server.");
-
-        } finally {
-
-            submitButton.textContent = "Send Inquiry →";
-            submitButton.disabled = false;
-
-        }
-
-    });
-
-});
-
-</script>	
-});
 
 <script>
 const themeToggle = document.getElementById("theme-toggle");
