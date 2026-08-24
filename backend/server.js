@@ -1,34 +1,26 @@
 const express = require("express");
 const cors = require("cors");
 const nodemailer = require("nodemailer");
+const path = require("path");
 
 const app = express();
-const PORT = process.env.PORT || 3000;;
+const PORT = process.env.PORT || 3000;
 
-// Middleware
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Test route
+// Serve portfolio files
+app.use(express.static(path.join(__dirname, "..")));
+
 app.get("/", (req, res) => {
-    res.send("Backend is working!");
+    res.sendFile(path.join(__dirname, "..", "!DOCTYPE html.html"));
 });
 
 // Contact form
 app.post("/send-inquiry", async (req, res) => {
-
     try {
-
         const { name, email, phone, work, message } = req.body;
-
-        console.log("Received inquiry:", {
-            name,
-            email,
-            phone,
-            work,
-            message
-        });
 
         const transporter = nodemailer.createTransport({
             service: "gmail",
@@ -39,12 +31,11 @@ app.post("/send-inquiry", async (req, res) => {
         });
 
         await transporter.sendMail({
-            from: "kamilahmadkhan666@gmail.com",
-            to: "kamilahmadkhan666@gmail.com",
+            from: process.env.EMAIL_USER,
+            to: process.env.EMAIL_USER,
             replyTo: email,
             subject: `Portfolio Inquiry — ${work}`,
-            text:
-`Name: ${name}
+            text: `Name: ${name}
 Email: ${email}
 Phone: ${phone}
 Type of Work: ${work}
@@ -59,7 +50,6 @@ ${message}`
         });
 
     } catch (error) {
-
         console.error("EMAIL ERROR:", error);
 
         res.status(500).json({
@@ -69,6 +59,6 @@ ${message}`
     }
 });
 
-app.listen(PORT, "0.0.0.0", () => {
+app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
 });
