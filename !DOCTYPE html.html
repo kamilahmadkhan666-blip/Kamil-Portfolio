@@ -1,0 +1,5258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Kamil Ahmad Khan — Marketing & Creative</title>
+
+    <meta
+        name="description"
+        content="Portfolio of Kamil Ahmad Khan — BBA student working across marketing, branding, content strategy and creative projects."
+    >
+
+    <style>
+
+        @import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Manrope:wght@400;500;600;700;800&display=swap');
+
+
+        :root {
+            --bg: #070707;
+            --bg-soft: #0d0d0d;
+            --card: #101010;
+            --card-hover: #151515;
+            --text: #f4f4f4;
+            --muted: #929292;
+            --blue: #1b84be;
+            --blue-light: #48b9f2;
+            --border: rgba(255,255,255,0.09);
+            --max-width: 1200px;
+        }
+
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: "Manrope", sans-serif;
+            overflow-x: hidden;
+        }
+
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+
+        button,
+        input,
+        textarea,
+        select {
+            font-family: inherit;
+        }
+
+
+        /* =========================
+           BACKGROUND
+        ========================= */
+
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+
+            background:
+                radial-gradient(
+                    circle at 80% 10%,
+                    rgba(27,132,190,0.12),
+                    transparent 30%
+                ),
+                radial-gradient(
+                    circle at 10% 60%,
+                    rgba(27,132,190,0.05),
+                    transparent 25%
+                );
+
+            z-index: -2;
+        }
+
+
+        body::after {
+            content: "";
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            opacity: 0.035;
+            z-index: -1;
+
+            background-image:
+                linear-gradient(
+                    rgba(255,255,255,0.4) 1px,
+                    transparent 1px
+                ),
+                linear-gradient(
+                    90deg,
+                    rgba(255,255,255,0.4) 1px,
+                    transparent 1px
+                );
+
+            background-size: 70px 70px;
+        }
+
+
+        .container {
+            width: min(92%, var(--max-width));
+            margin: auto;
+        }
+
+
+        /* =========================
+           NAVBAR
+        ========================= */
+
+        nav {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+
+            width: min(92%, 1100px);
+
+            padding: 14px 20px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            background: rgba(10,10,10,0.72);
+
+            border: 1px solid var(--border);
+            border-radius: 100px;
+
+            backdrop-filter: blur(20px);
+
+            z-index: 1000;
+        }
+
+
+        .logo {
+            font-weight: 800;
+            letter-spacing: -1px;
+        }
+
+
+        .logo span {
+            color: var(--blue-light);
+        }
+
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+
+            list-style: none;
+
+            font-size: 12px;
+            color: var(--muted);
+        }
+
+
+        .nav-links a {
+            transition: 0.3s;
+        }
+
+
+        .nav-links a:hover {
+            color: white;
+        }
+
+
+        .nav-cta {
+            padding: 9px 15px;
+
+            background: white;
+            color: black;
+
+            border-radius: 50px;
+
+            font-size: 13px;
+            font-weight: 700;
+
+            transition: 0.3s;
+        }
+
+
+        .nav-cta:hover {
+            background: var(--blue-light);
+            transform: translateY(-2px);
+        }
+
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            min-height: 80vh;
+
+            display: flex;
+            align-items: center;
+
+            position: relative;
+
+            padding-top: 80px;
+        }
+
+
+        .hero-content {
+            width: 100%;
+        }
+
+
+        .eyebrow {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            color: var(--blue-light);
+
+            font-family: "DM Mono", monospace;
+            font-size: 10px;
+
+            margin-bottom: 25px;
+        }
+
+
+        .eyebrow::before {
+            content: "";
+
+            width: 30px;
+            height: 1px;
+
+            background: var(--blue-light);
+        }
+
+
+        .hero h1 {
+            font-size: clamp(4rem, 11vw, 9.5rem);
+
+            line-height: 0.84;
+
+            letter-spacing: -0.075em;
+
+            max-width: 1100px;
+
+            margin-left: 20px;
+        }
+
+
+        .hero h1 .outline {
+            color: transparent;
+            -webkit-text-stroke: 1px rgba(255,255,255,0.55);
+        }
+
+
+        .hero-bottom {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+
+            margin-top: 75px;
+        }
+
+
+        .hero-description {
+            max-width: 780px;
+
+            color: var(--muted);
+
+            line-height: 1.8;
+
+            font-size: 16px;
+
+            margin-left: 20px;
+        }
+
+
+        .hero-actions {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+
+        .btn {
+            padding: 14px 22px;
+
+            border-radius: 100px;
+
+            border: 1px solid var(--border);
+
+            font-size: 12px;
+            font-weight: 700;
+
+            transition: 0.3s;
+
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+
+            cursor: pointer;
+        }
+
+
+        .btn-primary {
+            background: var(--blue);
+            border-color: var(--blue);
+            color: white;
+        }
+
+
+        .btn-primary:hover {
+            background: var(--blue-light);
+            transform: translateY(-3px);
+        }
+
+
+        .btn-secondary:hover {
+            background: white;
+            color: black;
+            transform: translateY(-3px);
+        }
+
+
+        /* =========================
+           SECTION
+        ========================= */
+
+        section {
+            padding: 50px 0;
+        }
+
+
+        .section-header {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+
+            margin-bottom: 60px;
+
+            gap: 30px;
+        }
+
+
+        .section-number {
+            font-family: "DM Mono", monospace;
+
+            color: var(--blue-light);
+
+            font-size: 12px;
+
+            margin-bottom: 12px;
+        }
+
+
+        .section-title {
+            font-size: clamp(2.5rem, 5vw, 5rem);
+
+            letter-spacing: -0.06em;
+
+            line-height: 0.95;
+        }
+
+
+        .section-description {
+            max-width: 380px;
+
+            color: var(--muted);
+
+            line-height: 1.7;
+
+            font-size: 14px;
+        }
+
+
+        /* =========================
+           ABOUT
+        ========================= */
+
+        .about-grid {
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 80px;
+        }
+
+
+        .about-text {
+            font-size: clamp(1.5rem, 3vw, 2.7rem);
+
+            line-height: 1.2;
+
+            letter-spacing: -0.04em;
+        }
+
+
+        .about-text span {
+            color: var(--muted);
+        }
+
+
+        .about-details {
+            display: grid;
+
+            gap: 1px;
+
+            background: var(--border);
+
+            border: 1px solid var(--border);
+        }
+
+
+        .detail {
+            background: var(--card);
+
+            padding: 25px;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            gap: 20px;
+        }
+
+
+        .detail-label {
+            color: var(--muted);
+
+            font-size: 12px;
+
+            font-family: "DM Mono", monospace;
+        }
+
+
+        .detail-value {
+            text-align: right;
+
+            font-size: 14px;
+        }
+
+
+        /* =========================
+           STATS
+        ========================= */
+
+        .stats {
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+
+        .stat {
+            padding: 50px 30px;
+
+            border-right: 1px solid var(--border);
+        }
+
+
+        .stat:last-child {
+            border-right: none;
+        }
+
+
+        .stat-number {
+            font-size: clamp(3rem, 7vw, 6rem);
+
+            letter-spacing: -0.07em;
+
+            line-height: 1;
+        }
+
+
+        .stat-label {
+            color: var(--muted);
+
+            font-size: 12px;
+
+            margin-top: 12px;
+        }
+
+
+        /* =========================
+           EXPERIENCE
+        ========================= */
+
+        .experience-list {
+            border-top: 1px solid var(--border);
+        }
+
+
+        .experience {
+            display: grid;
+
+            grid-template-columns: 80px 1fr 200px;
+
+            gap: 30px;
+
+            padding: 35px 0;
+
+            border-bottom: 1px solid var(--border);
+
+            transition: 0.3s;
+        }
+
+
+        .experience:hover {
+            padding-left: 15px;
+            padding-right: 15px;
+
+            background: rgba(255,255,255,0.02);
+        }
+
+
+        .experience-index {
+            color: var(--blue-light);
+
+            font-family: "DM Mono", monospace;
+
+            font-size: 12px;
+        }
+
+
+        .experience h3 {
+            font-size: 20px;
+
+            margin-bottom: 7px;
+        }
+
+
+        .experience-company {
+            color: var(--muted);
+
+            font-size: 12px;
+        }
+
+
+        .experience-description {
+            margin-top: 20px;
+
+            color: var(--muted);
+
+            font-size: 12px;
+
+            line-height: 1.7;
+
+            max-width: 650px;
+        }
+
+
+        .experience-date {
+            text-align: right;
+
+            color: var(--muted);
+
+            font-family: "DM Mono", monospace;
+
+            font-size: 11px;
+        }
+
+
+        /* =========================
+           PROJECTS
+        ========================= */
+
+        .projects-grid {
+            display: grid;
+
+            grid-template-columns: repeat(2, 1fr);
+
+            gap: 20px;
+        }
+
+
+        .project-link {
+            display: block;
+
+            perspective: 1000px;
+        }
+
+
+        .project {
+            min-height: 420px;
+
+            padding: 35px;
+
+            border: 1px solid var(--border);
+
+            background: var(--card);
+
+            position: relative;
+
+            overflow: hidden;
+
+            --rotate-x: 0deg;
+            --rotate-y: 0deg;
+
+            transform:
+                translateY(0)
+                perspective(1000px)
+                rotateX(var(--rotate-x))
+                rotateY(var(--rotate-y));
+
+            transition:
+                transform 0.15s ease-out,
+                box-shadow 0.3s ease,
+                background 0.4s;
+
+            transform-style: preserve-3d;
+        }
+
+
+        .project.reveal {
+            transform:
+                translateY(40px)
+                perspective(1000px)
+                rotateX(var(--rotate-x))
+                rotateY(var(--rotate-y));
+        }
+
+
+        .project.reveal.visible {
+            transform:
+                translateY(0)
+                perspective(1000px)
+                rotateX(var(--rotate-x))
+                rotateY(var(--rotate-y));
+        }
+
+
+        .project::before {
+            content: "";
+
+            position: absolute;
+
+            width: 300px;
+            height: 300px;
+
+            background: var(--blue);
+
+            border-radius: 50%;
+
+            filter: blur(120px);
+
+            opacity: 0;
+
+            right: -100px;
+            top: -100px;
+
+            transition: 0.5s;
+        }
+
+
+        .project:hover {
+            background: var(--card-hover);
+
+            box-shadow:
+                0 20px 50px rgba(0,0,0,0.25);
+        }
+
+
+        .project:hover::before {
+            opacity: 0.16;
+        }
+
+
+        .project::after {
+            content: "";
+
+            position: absolute;
+
+            width: 250px;
+            height: 250px;
+
+            border-radius: 50%;
+
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(255,255,255,0.12),
+                    transparent 70%
+                );
+
+            pointer-events: none;
+
+            left: var(--mouse-x, 50%);
+            top: var(--mouse-y, 50%);
+
+            transform: translate(-50%, -50%);
+
+            opacity: 0;
+
+            transition: opacity 0.3s ease;
+
+            z-index: 10;
+        }
+
+
+        .project:hover::after {
+            opacity: 1;
+        }
+
+
+        .project-number {
+            color: var(--blue-light);
+
+            font-family: "DM Mono", monospace;
+
+            font-size: 12px;
+
+            position: relative;
+
+            z-index: 2;
+        }
+
+
+        .project-click {
+            position: absolute;
+
+            top: 30px;
+            right: 35px;
+
+            font-family: "DM Mono", monospace;
+
+            font-size: 10px;
+
+            color: var(--muted);
+
+            letter-spacing: 0.05em;
+
+            transition: 0.3s;
+
+            z-index: 3;
+        }
+
+
+        .project:hover .project-click {
+            color: var(--blue-light);
+        }
+
+
+        .project h3 {
+            font-size: clamp(2rem, 4vw, 3.5rem);
+
+            letter-spacing: -0.06em;
+
+            margin-top: 100px;
+
+            position: relative;
+
+            z-index: 2;
+        }
+
+
+        .project p {
+            color: var(--muted);
+
+            font-size: 12px;
+
+            line-height: 1.7;
+
+            max-width: 430px;
+
+            margin-top: 15px;
+
+            position: relative;
+
+            z-index: 2;
+        }
+
+
+        .project-tag {
+            position: absolute;
+
+            bottom: 30px;
+            left: 35px;
+
+            font-family: "DM Mono", monospace;
+
+            font-size: 10px;
+
+            color: var(--muted);
+
+            border: 1px solid var(--border);
+
+            border-radius: 50px;
+
+            padding: 7px 12px;
+
+            z-index: 3;
+        }
+
+
+        /* =========================
+           CERTIFICATES
+        ========================= */
+
+        .certificates-wrapper {
+            width: 100%;
+
+            overflow: hidden;
+
+            padding: 20px 0;
+        }
+
+
+        .certificates-track {
+            display: flex;
+
+            width: max-content;
+
+            gap: 25px;
+
+            animation:
+                certificateScroll 25s linear infinite;
+        }
+
+
+        .certificate {
+            width: 350px;
+            height: 250px;
+
+            flex-shrink: 0;
+
+            border: 1px solid var(--border);
+
+            background: var(--card);
+
+            overflow: hidden;
+
+            transition: 0.3s;
+        }
+
+
+        .certificate:hover {
+            transform: translateY(-6px);
+
+            border-color:
+                rgba(72,185,242,0.3);
+        }
+
+
+        .certificate img {
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+
+            display: block;
+        }
+
+
+        @keyframes certificateScroll {
+
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+
+        }
+
+
+        /* =========================
+           LEADERSHIP
+        ========================= */
+
+        .leadership-list {
+            display: grid;
+
+            gap: 12px;
+        }
+
+
+        .leadership-item {
+            border: 1px solid var(--border);
+
+            padding: 25px 30px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 20px;
+
+            transition: 0.3s;
+        }
+
+
+        .leadership-item:hover {
+            background: var(--card);
+
+            border-color:
+                rgba(72,185,242,0.3);
+        }
+
+
+        .leadership-role {
+            font-size: 18px;
+
+            font-weight: 700;
+        }
+
+
+        .leadership-org {
+            color: var(--muted);
+
+            font-size: 12px;
+
+            margin-top: 5px;
+        }
+
+
+        .leadership-year {
+            color: var(--blue-light);
+
+            font-family: "DM Mono", monospace;
+
+            font-size: 11px;
+        }
+
+
+        /* =========================
+           SKILLS
+        ========================= */
+
+        .skills-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(5, 1fr);
+
+            gap: 1px;
+
+            background: var(--border);
+
+            border: 1px solid var(--border);
+        }
+
+
+        .skill-category {
+            background: var(--card);
+
+            padding: 35px 25px;
+
+            min-height: 220px;
+        }
+
+
+        .skill-category h3 {
+            font-size: 14px;
+
+            margin-bottom: 25px;
+        }
+
+
+        .skill-category ul {
+            list-style: none;
+
+            color: var(--muted);
+
+            font-size: 12px;
+
+            line-height: 2;
+        }
+
+
+        /* =========================
+           FOOTBALL PLAYGROUND
+        ========================= */
+
+        .playground-section {
+            padding: 130px 0;
+        }
+
+
+        .playground-intro {
+            max-width: 500px;
+
+            color: var(--muted);
+
+            line-height: 1.8;
+
+            margin-top: 25px;
+
+            margin-bottom: 50px;
+        }
+
+
+        .football-game {
+            position: relative;
+
+            border: 1px solid var(--border);
+
+            background: #090909;
+
+            padding: 25px;
+
+            overflow: hidden;
+
+            transition:
+                border-color 0.3s ease,
+                box-shadow 0.3s ease;
+        }
+
+
+        .game-score {
+            font-family: "DM Mono", monospace;
+
+            font-size: 11px;
+
+            color: var(--muted);
+
+            margin-bottom: 15px;
+
+            display: flex;
+
+            gap: 7px;
+
+            align-items: center;
+        }
+
+
+        .game-score span {
+            color: var(--blue-light);
+
+            font-size: 12px;
+        }
+
+
+        .game-score .score-divider {
+            color: var(--muted);
+            margin: 0 5px;
+        }
+
+
+        .football-field {
+            position: relative;
+
+            width: 100%;
+
+            height: 420px;
+
+            border: 1px solid
+                rgba(255,255,255,0.2);
+
+            background:
+                linear-gradient(
+                    90deg,
+                    transparent 49.8%,
+                    rgba(255,255,255,0.15) 50%,
+                    transparent 50.2%
+                );
+
+            overflow: hidden;
+
+            cursor: crosshair;
+
+            isolation: isolate;
+        }
+
+
+        .football-field::before {
+            content: "";
+
+            position: absolute;
+
+            width: 120px;
+            height: 120px;
+
+            border:
+                1px solid
+                rgba(255,255,255,0.15);
+
+            border-radius: 50%;
+
+            left: 50%;
+            top: 50%;
+
+            transform:
+                translate(-50%, -50%);
+
+            pointer-events: none;
+        }
+
+
+        .football-field::after {
+            content: "";
+
+            position: absolute;
+
+            width: 90px;
+            height: 220px;
+
+            right: 0;
+            top: 50%;
+
+            transform:
+                translateY(-50%);
+
+            border:
+                1px solid
+                rgba(255,255,255,0.12);
+
+            border-right: none;
+
+            pointer-events: none;
+        }
+
+
+        /* =========================
+           GOAL
+        ========================= */
+
+        .goal {
+            position: absolute;
+
+            right: 12px;
+            top: 50%;
+
+            width: 75px;
+            height: 190px;
+
+            transform:
+                translateY(-50%);
+
+            z-index: 2;
+
+            pointer-events: none;
+
+            opacity: 0.9;
+        }
+
+
+        .goal svg {
+            width: 100%;
+            height: 100%;
+
+            display: block;
+        }
+
+
+        /* =========================
+           GOALKEEPER
+        ========================= */
+
+        .goalkeeper {
+            position: absolute;
+
+            right: 72px;
+
+            top: 50%;
+
+            width: 58px;
+            height: 95px;
+
+            transform:
+                translateY(-50%);
+
+            z-index: 5;
+
+            pointer-events: none;
+
+            transition:
+                top 0.45s cubic-bezier(.2,.8,.2,1),
+                transform 0.28s ease,
+                opacity 0.28s ease;
+
+            filter:
+                drop-shadow(
+                    0 8px 12px
+                    rgba(0,0,0,0.35)
+                );
+        }
+
+
+        .goalkeeper svg {
+            width: 100%;
+            height: 100%;
+
+            display: block;
+        }
+
+
+        .goalkeeper.saving-left {
+            transform:
+                translate(-32px, -50%)
+                rotate(-14deg)
+                scale(1.08);
+        }
+
+
+        .goalkeeper.saving-right {
+            transform:
+                translate(24px, -50%)
+                rotate(14deg)
+                scale(1.08);
+        }
+
+
+        .goalkeeper.beaten {
+            transform:
+                translate(25px, -50%)
+                rotate(22deg);
+
+            opacity: 0.62;
+        }
+
+
+        /* =========================
+           BALL
+        ========================= */
+
+        .football-ball {
+            position: absolute;
+
+            left: 50%;
+            top: 50%;
+
+            width: 36px;
+            height: 36px;
+
+            transform:
+                translate(-50%, -50%);
+
+            pointer-events: none;
+
+            z-index: 7;
+
+            transition:
+                left 0.05s linear,
+                top 0.05s linear,
+                transform 0.2s ease;
+        }
+
+
+        .football-ball svg {
+            width: 100%;
+            height: 100%;
+
+            display: block;
+
+            filter:
+                drop-shadow(
+                    0 5px 8px
+                    rgba(0,0,0,0.4)
+                );
+        }
+
+
+        .football-game.goal-scored
+        .football-ball {
+
+            transform:
+                translate(-50%, -50%)
+                scale(1.35);
+        }
+
+
+        .football-game.saved
+        .football-ball {
+
+            transform:
+                translate(-50%, -50%)
+                scale(0.82);
+        }
+
+
+        .football-game.goal-scored {
+            border-color:
+                var(--blue-light);
+
+            box-shadow:
+                0 0 40px
+                rgba(72,185,242,0.12);
+        }
+
+
+        .football-game.saved {
+            border-color:
+                rgba(255,255,255,0.2);
+        }
+
+
+        /* =========================
+           GAME MESSAGE
+        ========================= */
+
+        .game-message {
+            margin-top: 18px;
+
+            font-family: "DM Mono", monospace;
+
+            font-size: 11px;
+
+            color: var(--muted);
+
+            min-height: 16px;
+
+            transition:
+                color 0.2s ease;
+        }
+
+
+        /* =========================
+           START BUTTON
+        ========================= */
+
+        .football-start {
+            margin-top: 20px;
+
+            padding: 12px 20px;
+
+            border:
+                1px solid
+                var(--border);
+
+            border-radius: 50px;
+
+            background: transparent;
+
+            color: var(--text);
+
+            font-family: "Manrope", sans-serif;
+
+            font-size: 12px;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+        }
+
+
+        .football-start:hover {
+            background: white;
+
+            color: black;
+        }
+
+
+        .football-start:disabled {
+            opacity: 0.5;
+
+            cursor: default;
+        }
+
+
+        .football-start:disabled:hover {
+            background: transparent;
+
+            color: var(--text);
+        }
+
+
+        /* =========================
+           FOOTBALL MODAL
+        ========================= */
+
+        .football-modal {
+            position: fixed;
+
+            inset: 0;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            padding: 20px;
+
+            opacity: 0;
+
+            visibility: hidden;
+
+            pointer-events: none;
+
+            transition:
+                opacity 0.35s ease,
+                visibility 0.35s ease;
+
+            z-index: 5000;
+        }
+
+
+        .football-modal.active {
+            opacity: 1;
+
+            visibility: visible;
+
+            pointer-events: auto;
+        }
+
+
+        .football-modal-overlay {
+            position: absolute;
+
+            inset: 0;
+
+            background:
+                rgba(0,0,0,0.78);
+
+            backdrop-filter:
+                blur(15px);
+        }
+
+
+        .football-modal-box {
+            width: min(620px, 100%);
+
+            position: relative;
+
+            z-index: 2;
+
+            padding: 55px;
+
+            border:
+                1px solid
+                var(--border);
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #0c0c0c,
+                    #101820
+                );
+
+            box-shadow:
+                0 40px 100px
+                rgba(0,0,0,0.5);
+
+            transform:
+                translateY(30px)
+                scale(0.96);
+
+            transition:
+                transform 0.4s ease;
+        }
+
+
+        .football-modal.active
+        .football-modal-box {
+            transform:
+                translateY(0)
+                scale(1);
+        }
+
+
+        .football-modal-close {
+            position: absolute;
+
+            right: 22px;
+            top: 20px;
+
+            width: 38px;
+            height: 38px;
+
+            border:
+                1px solid
+                var(--border);
+
+            border-radius: 50%;
+
+            background: transparent;
+
+            color: white;
+
+            font-size: 25px;
+
+            line-height: 1;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+        }
+
+
+        .football-modal-close:hover {
+            background: white;
+
+            color: black;
+        }
+
+
+        .football-modal-box h2 {
+            font-size:
+                clamp(2.7rem, 7vw, 5.5rem);
+
+            line-height: 0.9;
+
+            letter-spacing: -0.08em;
+
+            margin-top: 20px;
+        }
+
+
+        .football-modal-box h2 span {
+            color: transparent;
+
+            -webkit-text-stroke:
+                1px rgba(255,255,255,0.55);
+        }
+
+
+        .football-modal-box p {
+            max-width: 470px;
+
+            color: var(--muted);
+
+            line-height: 1.7;
+
+            font-size: 14px;
+
+            margin-top: 25px;
+        }
+
+
+        .football-final-score {
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 1px;
+
+            background:
+                var(--border);
+
+            border:
+                1px solid
+                var(--border);
+
+            margin-top: 35px;
+        }
+
+
+        .football-final-score > div {
+            background: var(--card);
+
+            padding: 25px;
+        }
+
+
+        .football-final-score strong {
+            display: block;
+
+            font-size: 50px;
+
+            line-height: 1;
+
+            letter-spacing: -0.06em;
+
+            color: var(--blue-light);
+        }
+
+
+        .football-final-score span {
+            display: block;
+
+            margin-top: 8px;
+
+            color: var(--muted);
+
+            font-family:
+                "DM Mono",
+                monospace;
+
+            font-size: 10px;
+        }
+
+
+        .football-modal-actions {
+            display: flex;
+
+            gap: 12px;
+
+            flex-wrap: wrap;
+
+            margin-top: 30px;
+        }
+
+
+        /* =========================
+           PORTFOLIO CTA
+        ========================= */
+
+        .portfolio-cta {
+            border: 1px solid var(--border);
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #0d0d0d,
+                    #101820
+                );
+
+            padding: 80px;
+
+            position: relative;
+
+            overflow: hidden;
+        }
+
+
+        .portfolio-cta::after {
+            content: "150+";
+
+            position: absolute;
+
+            right: -20px;
+            bottom: -80px;
+
+            font-size: 18rem;
+
+            font-weight: 800;
+
+            letter-spacing: -0.1em;
+
+            color:
+                rgba(255,255,255,0.025);
+        }
+
+
+        .portfolio-cta h2 {
+            font-size:
+                clamp(3rem, 7vw, 7rem);
+
+            letter-spacing: -0.08em;
+
+            max-width: 750px;
+
+            line-height: 0.9;
+
+            position: relative;
+
+            z-index: 2;
+        }
+
+
+        .portfolio-cta p {
+            color: var(--muted);
+
+            margin: 25px 0 35px;
+
+            position: relative;
+
+            z-index: 2;
+        }
+
+
+        .portfolio-cta .btn {
+            position: relative;
+            z-index: 2;
+        }
+
+
+        /* =========================
+           CONTACT
+        ========================= */
+
+        .contact-grid {
+            display: grid;
+
+            grid-template-columns:
+                0.8fr 1.2fr;
+
+            gap: 80px;
+        }
+
+
+        .contact-left h2 {
+            font-size:
+                clamp(3rem, 6vw, 6rem);
+
+            line-height: 0.9;
+
+            letter-spacing: -0.08em;
+        }
+
+
+        .contact-left p {
+            color: var(--muted);
+
+            line-height: 1.7;
+
+            margin-top: 25px;
+
+            max-width: 400px;
+        }
+
+
+        .socials {
+            display: flex;
+
+            gap: 10px;
+
+            margin-top: 35px;
+
+            flex-wrap: wrap;
+        }
+
+
+        .social {
+            border:
+                1px solid
+                var(--border);
+
+            padding: 10px 15px;
+
+            border-radius: 50px;
+
+            font-size: 12px;
+
+            transition: 0.3s;
+        }
+
+
+        .social:hover {
+            background: white;
+
+            color: black;
+        }
+
+
+        .contact-form {
+            display: grid;
+
+            gap: 15px;
+        }
+
+
+        .input-group {
+            display: grid;
+
+            gap: 8px;
+        }
+
+
+        .input-group label {
+            font-family:
+                "DM Mono", monospace;
+
+            color: var(--muted);
+
+            font-size: 10px;
+
+            text-transform: uppercase;
+        }
+
+
+        .input-group input,
+        .input-group textarea,
+        .input-group select {
+
+            width: 100%;
+
+            background: var(--card);
+
+            border:
+                1px solid
+                var(--border);
+
+            color: white;
+
+            padding: 16px;
+
+            outline: none;
+
+            font-size: 12px;
+
+            transition: 0.3s;
+        }
+
+
+        .input-group textarea {
+            min-height: 150px;
+
+            resize: vertical;
+        }
+
+
+        .input-group input:focus,
+        .input-group textarea:focus,
+        .input-group select:focus {
+
+            border-color:
+                var(--blue);
+        }
+
+
+        .submit-btn {
+            border: none;
+
+            cursor: pointer;
+
+            width: fit-content;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            padding: 35px 0;
+
+            border-top:
+                1px solid
+                var(--border);
+
+            color: var(--muted);
+
+            font-size: 11px;
+
+            font-family:
+                "DM Mono", monospace;
+        }
+
+
+        .footer-inner {
+            display: flex;
+
+            justify-content:
+                space-between;
+
+            gap: 20px;
+        }
+
+
+        /* =========================
+           REVEAL ANIMATION
+        ========================= */
+
+        .reveal {
+            opacity: 0;
+
+            transform:
+                translateY(40px);
+
+            transition:
+                opacity 0.8s ease,
+                transform 0.8s ease;
+        }
+
+
+        .reveal.visible {
+            opacity: 1;
+
+            transform:
+                translateY(0);
+        }
+
+
+        .project.reveal {
+            transform:
+                translateY(40px)
+                perspective(1000px)
+                rotateX(var(--rotate-x))
+                rotateY(var(--rotate-y));
+        }
+
+
+        .project.reveal.visible {
+            transform:
+                translateY(0)
+                perspective(1000px)
+                rotateX(var(--rotate-x))
+                rotateY(var(--rotate-y));
+        }
+
+
+        /* =========================
+           CUSTOM CURSOR
+        ========================= */
+
+        .cursor {
+            width: 20px;
+            height: 20px;
+
+            background: white;
+
+            border-radius: 50%;
+
+            position: fixed;
+
+            left: 0;
+            top: 0;
+
+            pointer-events: none;
+
+            z-index: 9999;
+
+            transform:
+                translate(-50%, -50%);
+
+            transition:
+                width 0.2s ease,
+                height 0.2s ease;
+
+            display: none;
+        }
+
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media (max-width: 900px) {
+
+            .nav-links {
+                display: none;
+            }
+
+
+            .hero-bottom {
+                flex-direction: column;
+
+                align-items: flex-start;
+
+                gap: 30px;
+            }
+
+
+            .about-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+
+                gap: 50px;
+            }
+
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+
+            .skills-grid {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+
+            .experience {
+                grid-template-columns:
+                    50px 1fr;
+            }
+
+
+            .experience-date {
+                grid-column: 2;
+
+                text-align: left;
+            }
+
+
+            .portfolio-cta {
+                padding: 50px 30px;
+            }
+
+
+            .certificate {
+                width: 300px;
+
+                height: 215px;
+            }
+
+
+            .goalkeeper {
+                right: 62px;
+            }
+
+        }
+
+
+        @media (max-width: 600px) {
+
+            section {
+                padding: 90px 0;
+            }
+
+
+            .hero h1 {
+                font-size:
+                    clamp(
+                        3.7rem,
+                        17vw,
+                        6rem
+                    );
+            }
+
+
+            .stats {
+                grid-template-columns: 1fr;
+            }
+
+
+            .stat {
+                border-right: none;
+
+                border-bottom:
+                    1px solid
+                    var(--border);
+            }
+
+
+            .stat:last-child {
+                border-bottom: none;
+            }
+
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+
+            .leadership-item {
+                flex-direction: column;
+
+                align-items: flex-start;
+            }
+
+
+            .contact-grid {
+                gap: 50px;
+            }
+
+
+            .footer-inner {
+                flex-direction: column;
+            }
+
+
+            .certificate {
+                width: 280px;
+
+                height: 200px;
+            }
+
+
+            .project-click {
+                right: 25px;
+
+                top: 25px;
+            }
+
+
+            .football-game {
+                padding: 15px;
+            }
+
+
+            .football-field {
+                height: 300px;
+            }
+
+
+            .goal {
+                width: 58px;
+                height: 145px;
+
+                right: 7px;
+            }
+
+
+            .goalkeeper {
+                width: 45px;
+                height: 76px;
+
+                right: 48px;
+            }
+
+
+            .football-ball {
+                width: 30px;
+                height: 30px;
+            }
+
+
+            .goalkeeper.saving-left {
+                transform:
+                    translate(-22px, -50%)
+                    rotate(-14deg)
+                    scale(1.05);
+            }
+
+
+            .goalkeeper.saving-right {
+                transform:
+                    translate(16px, -50%)
+                    rotate(14deg)
+                    scale(1.05);
+            }
+
+
+            .goalkeeper.beaten {
+                transform:
+                    translate(18px, -50%)
+                    rotate(20deg);
+            }
+
+
+            .football-modal-box {
+                padding: 40px 25px;
+            }
+
+
+            .football-modal-box h2 {
+                font-size: 3rem;
+            }
+
+
+            .football-final-score strong {
+                font-size: 40px;
+            }
+
+        }
+
+        /* Theme Toggle */
+.theme-toggle {
+    width: 42px;
+    height: 42px;
+    border: 1px solid currentColor;
+    border-radius: 50%;
+    background: transparent;
+    color: inherit;
+    font-size: 20px;
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: all 0.3s ease;
+}
+
+.theme-toggle:hover {
+    transform: rotate(20deg) scale(1.05);
+}
+
+/* Dark Theme */
+body.dark-theme {
+    background: #111;
+    color: #f5f5f5;
+}
+
+/* Smooth theme transition */
+body,
+.theme-toggle {
+    transition:
+        background-color 0.4s ease,
+        color 0.4s ease,
+        border-color 0.4s ease;
+}
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <div class="cursor"></div>
+
+
+    <!-- =========================
+         NAVIGATION
+    ========================= -->
+
+    <nav>
+
+        <a href="#home" class="logo">
+            Kamil<span>.</span>Portfolio
+        </a>
+
+
+        <ul class="nav-links">
+
+            <li>
+                <a href="#about">About</a>
+            </li>
+
+            <li>
+                <a href="#experience">Experience</a>
+            </li>
+
+            <li>
+                <a href="#projects">Projects</a>
+            </li>
+
+            <li>
+                <a href="#certificates">Certificates</a>
+            </li>
+
+            <li>
+                <a href="#leadership">Leadership</a>
+            </li>
+
+            <li>
+                <a href="#contact">Contact</a>
+            </li>
+
+        </ul>
+
+
+        <a
+            href="https://drive.google.com/file/d/1_sFW5lGTKC96akOYp4FDqJ5wOHGcPLKp/view?usp=drive_link"
+            target="_blank"
+            class="nav-cta"
+        >
+            Resume ↗
+        </a>
+  
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+             ☾
+        </button>
+
+    </nav>
+
+
+    <main>
+
+
+        <!-- =========================
+             HERO
+        ========================= -->
+
+        <section class="hero" id="home">
+
+            <div class="container hero-content">
+
+                <div class="eyebrow reveal">
+                    MARKETING · BRANDING · CREATIVE
+                </div>
+
+
+                <h1 class="reveal">
+
+                    KAMIL
+                    <span class="outline">
+                        AHMAD
+                    </span>
+                    KHAN
+                    <span style="color:var(--blue-light)">
+                        .
+                    </span>
+
+                </h1>
+
+
+                <div class="hero-bottom reveal">
+
+                    <p class="hero-description">
+
+                        BBA student building experience across marketing,
+                        social media, branding and creative execution.
+
+                        I like turning ideas into things people can actually see,
+                        understand and engage with.
+
+                    </p>
+
+
+                    <div class="hero-actions">
+
+                        <a
+                            href="#projects"
+                            class="btn btn-primary"
+                        >
+                            Explore Work ↓
+                        </a>
+
+
+                        <a
+                            href="#contact"
+                            class="btn btn-secondary"
+                        >
+                            Let's Talk
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             ABOUT
+        ========================= -->
+
+        <section id="about">
+
+            <div class="container">
+
+                <div class="section-header reveal">
+
+                    <div>
+
+                        <div class="section-number">
+                            01 / ABOUT
+                        </div>
+
+
+                        <h2 class="section-title">
+
+                            More than<br>
+                            just a student.
+
+                        </h2>
+
+                    </div>
+
+
+                    <p class="section-description">
+
+                        Currently pursuing BBA at Jaypee Business School,
+                        with practical experience across branding, content,
+                        social media and team coordination.
+
+                    </p>
+
+                </div>
+
+
+                <div class="about-grid">
+
+
+                    <div class="about-text reveal">
+
+                        I work at the intersection of
+                        <span>
+                            marketing, creativity and execution.
+                        </span>
+
+                        <br><br>
+
+                        My experience comes from actually working on
+                        projects, leading teams and creating content
+                        not just studying them.
+
+                    </div>
+
+
+                    <div class="about-details reveal">
+
+
+                        <div class="detail">
+
+                            <span class="detail-label">
+                                EDUCATION
+                            </span>
+
+                            <span class="detail-value">
+                                BBA<br>
+                                Jaypee Business School
+                            </span>
+
+                        </div>
+
+
+                        <div class="detail">
+
+                            <span class="detail-label">
+                                FOCUS
+                            </span>
+
+                            <span class="detail-value">
+                                Marketing<br>
+                                Branding · Content
+                            </span>
+
+                        </div>
+
+
+                        <div class="detail">
+
+                            <span class="detail-label">
+                                LOCATION
+                            </span>
+
+                            <span class="detail-value">
+                                Ghaziabad, Uttar Pradesh
+                            </span>
+
+                        </div>
+
+
+                        <div class="detail">
+
+                            <span class="detail-label">
+                                EMAIL
+                            </span>
+
+                            <span class="detail-value">
+                                kamilahmadkhan666@gmail.com
+                            </span>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             STATS
+        ========================= -->
+
+        <section>
+
+            <div class="container">
+
+                <div class="stats reveal">
+
+
+                    <div class="stat">
+
+                        <div class="stat-number">
+                            150+
+                        </div>
+
+                        <div class="stat-label">
+                            Designs & creative projects
+                        </div>
+
+                    </div>
+
+
+                    <div class="stat">
+
+                        <div class="stat-number">
+                            10+
+                        </div>
+
+                        <div class="stat-label">
+                            Team members led
+                        </div>
+
+                    </div>
+
+
+                    <div class="stat">
+
+                        <div class="stat-number">
+                            10K+
+                        </div>
+
+                        <div class="stat-label">
+                            Views achieved in first month
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             EXPERIENCE
+        ========================= -->
+
+        <section id="experience">
+
+            <div class="container">
+
+
+                <div class="section-header reveal">
+
+                    <div>
+
+                        <div class="section-number">
+                            02 / EXPERIENCE
+                        </div>
+
+                        <h2 class="section-title">
+                            Where I've<br>
+                            worked.
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="experience-list">
+
+
+                    <article class="experience reveal">
+
+                        <div class="experience-index">
+                            01
+                        </div>
+
+
+                        <div>
+
+                            <h3>
+                                Digital Head Intern
+                            </h3>
+
+                            <div class="experience-company">
+                                Rani Mahal
+                            </div>
+
+                            <p class="experience-description">
+
+                                Designed the official brand identity and created
+                                15+ branding and marketing creatives. Also produced
+                                AI-powered promotional reels and received a Letter
+                                of Recommendation for performance.
+
+                            </p>
+
+                        </div>
+
+
+                        <div class="experience-date">
+                            JUN — JUL 2026
+                        </div>
+
+                    </article>
+
+
+                    <article class="experience reveal">
+
+                        <div class="experience-index">
+                            02
+                        </div>
+
+
+                        <div>
+
+                            <h3>
+                                Social Media Intern
+                            </h3>
+
+                            <div class="experience-company">
+                                Local Vibez
+                            </div>
+
+                            <p class="experience-description">
+
+                                Designed 35+ posters and promotional creatives
+                                while maintaining a consistent delivery of
+                                3+ posts per week.
+
+                            </p>
+
+                        </div>
+
+
+                        <div class="experience-date">
+                            OCT — DEC 2025
+                        </div>
+
+                    </article>
+
+
+                    <article class="experience reveal">
+
+                        <div class="experience-index">
+                            03
+                        </div>
+
+
+                        <div>
+
+                            <h3>
+                                Social Media Intern
+                            </h3>
+
+                            <div class="experience-company">
+                                Sparsh Society
+                            </div>
+
+                            <p class="experience-description">
+
+                                Created LinkedIn-focused creatives, represented
+                                the NGO at external events and supported
+                                communication and volunteer coordination
+                                during field activities.
+
+                            </p>
+
+                        </div>
+
+
+                        <div class="experience-date">
+                            JUN 2025
+                        </div>
+
+                    </article>
+
+
+                    <article class="experience reveal">
+
+                        <div class="experience-index">
+                            04
+                        </div>
+
+
+                        <div>
+
+                            <h3>
+                                Founding Member Intern - Marketing
+                            </h3>
+
+                            <div class="experience-company">
+                                Xerostate
+                            </div>
+
+                            <p class="experience-description">
+
+                                I'm a Founding Member & Marketing Intern at Xerostate,
+                                contributing to the brand's marketing and visual
+                                communication. I primarily create posters and visual
+                                content to promote Xerostate and its features.
+
+                            </p>
+
+                        </div>
+
+
+                        <div class="experience-date">
+                            JUN 2026 - PRESENT
+                        </div>
+
+                    </article>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             PROJECTS
+        ========================= -->
+
+        <section id="projects">
+
+            <div class="container">
+
+
+                <div class="section-header reveal">
+
+                    <div>
+
+                        <div class="section-number">
+                            03 / PROJECTS
+                        </div>
+
+                        <h2 class="section-title">
+                            Things I've<br>
+                            built.
+                        </h2>
+
+                    </div>
+
+
+                    <p class="section-description">
+
+                        A selection of work across social media,
+                        branding, content execution and creative projects.
+
+                    </p>
+
+                </div>
+
+
+                <div class="projects-grid">
+
+
+                    <a
+                        href="impact-bridge.html"
+                        class="project-link"
+                    >
+
+                        <article class="project reveal">
+
+                            <div class="project-number">
+                                PROJECT / 01
+                            </div>
+
+
+                            <div class="project-click">
+                                CLICK HERE ↗
+                            </div>
+
+
+                            <h3>
+                                Impact Bridge.
+                            </h3>
+
+
+                            <p>
+
+                                Led a 10-member student content team supporting
+                                four clients including NGOs and organizations.
+                                Created posters, carousels and social media creatives
+                                while contributing to measurable online growth.
+
+                            </p>
+
+
+                            <div class="project-tag">
+                                SOCIAL MEDIA · BRANDING
+                            </div>
+
+                        </article>
+
+                    </a>
+
+
+                    <a
+                        href="Taskly.html"
+                        class="project-link"
+                    >
+
+                        <article class="project reveal">
+
+                            <div class="project-number">
+                                PROJECT / 02
+                            </div>
+
+
+                            <div class="project-click">
+                                CLICK HERE ↗
+                            </div>
+
+
+                            <h3>
+                                TaskLy.
+                            </h3>
+
+
+                            <p>
+
+                                TaskLy is a student focused freelance platform that
+                                connects students who need work with students who have
+                                the skills to complete it. Students can earn money,
+                                gain real-world experience, and build their portfolios
+                                by completing freelance tasks.
+
+                            </p>
+
+
+                            <div class="project-tag">
+                                STUDENT FREELANCING · SKILL MARKETPLACE
+                            </div>
+
+                        </article>
+
+                    </a>
+
+
+                    <a
+                        href="the_designo.html"
+                        class="project-link"
+                    >
+
+                        <article class="project reveal">
+
+                            <div class="project-number">
+                                PROJECT / 03
+                            </div>
+
+
+                            <div class="project-click">
+                                CLICK HERE ↗
+                            </div>
+
+
+                            <h3>
+                                The Design'O.
+                            </h3>
+
+
+                            <p>
+
+                                Worked on 30+ promotional designs for travel agency
+                                clients while gaining hands-on exposure to client
+                                communication, branding execution and project workflows.
+
+                            </p>
+
+
+                            <div class="project-tag">
+                                DESIGN · CLIENT WORK
+                            </div>
+
+                        </article>
+
+                    </a>
+
+
+                    <a
+                        href="theaxvi.html"
+                        class="project-link"
+                    >
+
+                        <article class="project reveal">
+
+                            <div class="project-number">
+                                PROJECT / 04
+                            </div>
+
+
+                            <div class="project-click">
+                                CLICK HERE ↗
+                            </div>
+
+
+                            <h3>
+                                The Axvi.
+                            </h3>
+
+
+                            <p>
+
+                                The Axvi is a creative studio that provides website design,
+                                graphic design, and video editing services. We help
+                                businesses and individuals turn their ideas into
+                                professional digital experiences and visual content.
+
+                            </p>
+
+
+                            <div class="project-tag">
+                                CREATIVE STUDIO · DESIGN AGENCY
+                            </div>
+
+                        </article>
+
+                    </a>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             CERTIFICATES
+        ========================= -->
+
+        <section id="certificates">
+
+            <div class="container">
+
+
+                <div class="section-header reveal">
+
+                    <div>
+
+                        <div class="section-number">
+                            04 / CERTIFICATES
+                        </div>
+
+                        <h2 class="section-title">
+                            Things I've<br>
+                            earned.
+                        </h2>
+
+                    </div>
+
+
+                    <p class="section-description">
+
+                        Certifications and achievements from my academic,
+                        professional and extracurricular journey.
+
+                    </p>
+
+                </div>
+
+
+                <div class="certificates-wrapper">
+
+                    <div class="certificates-track">
+
+
+                        <div class="certificate">
+                            <img
+                                src="Image/certificate-01.jpg.jpeg"
+                                alt="Certificate 1"
+                            >
+                        </div>
+
+
+                        <div class="certificate">
+                            <img
+                                src="Image/certificate-02.jpg.jpeg"
+                                alt="Certificate 2"
+                            >
+                        </div>
+
+
+                        <div class="certificate">
+                            <img
+                                src="Image/certificate-03.jpg.jpeg"
+                                alt="Certificate 3"
+                            >
+                        </div>
+
+
+                        <div class="certificate">
+                            <img
+                                src="Image/certificate-04.jpg.jpeg"
+                                alt="Certificate 4"
+                            >
+                        </div>
+
+
+                        <div class="certificate">
+                            <img
+                                src="Image/certificate-05.jpg.jpeg"
+                                alt="Certificate 5"
+                            >
+                        </div>
+
+
+                        <div class="certificate">
+                            <img
+                                src="Image/certificate-06.jpg.jpg"
+                                alt="Certificate 6"
+                            >
+                        </div>
+
+                        <div class="certificate">
+                            <img
+                                src="Image/certificate-07.jpg.png"
+                                alt="Certificate 7"
+                            >
+                        </div>
+
+
+                        <!-- DUPLICATE SET -->
+
+                        <div class="certificate">
+                            <img
+                                src="Image/certificate-01.jpg.jpeg"
+                                alt="Certificate 1"
+                            >
+                        </div>
+
+
+                        <div class="certificate">
+                            <img
+                                src="Image/certificate-02.jpg.jpeg"
+                                alt="Certificate 2"
+                            >
+                        </div>
+
+
+                        <div class="certificate">
+                            <img
+                                src="Image/certificate-03.jpg.jpeg"
+                                alt="Certificate 3"
+                            >
+                        </div>
+
+
+                        <div class="certificate">
+                            <img
+                                src="Image/certificate-04.jpg.jpeg"
+                                alt="Certificate 4"
+                            >
+                        </div>
+
+
+                        <div class="certificate">
+                            <img
+                                src="Image/certificate-05.jpg.jpeg"
+                                alt="Certificate 5"
+                            >
+                        </div>
+
+
+                        <div class="certificate">
+                            <img
+                                src="Image/certificate-06.jpg.jpg"
+                                alt="Certificate 6"
+                            >
+                        </div>
+
+                        z<div class="certificate">
+                            <img
+                                src="Image/certificate-07.jpg.png"
+                                alt="Certificate 7"
+                            >
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             LEADERSHIP
+        ========================= -->
+
+        <section id="leadership">
+
+            <div class="container">
+
+
+                <div class="section-header reveal">
+
+                    <div>
+
+                        <div class="section-number">
+                            05 / LEADERSHIP
+                        </div>
+
+                        <h2 class="section-title">
+                            Leading<br>
+                            from the front.
+                        </h2>
+
+                    </div>
+
+
+                    <p class="section-description">
+
+                        Leadership roles across student organizations,
+                        committees and academic responsibilities.
+
+                    </p>
+
+                </div>
+
+
+                <div class="leadership-list">
+
+
+                    <div class="leadership-item reveal">
+
+                        <div>
+
+                            <div class="leadership-role">
+                                President
+                            </div>
+
+                            <div class="leadership-org">
+                                Marketing Minds
+                            </div>
+
+                        </div>
+
+
+                        <div class="leadership-year">
+                            2026 — PRESENT
+                        </div>
+
+                    </div>
+
+
+                    <div class="leadership-item reveal">
+
+                        <div>
+
+                            <div class="leadership-role">
+                                Management Head
+                            </div>
+
+                            <div class="leadership-org">
+                                Finanza Club
+                            </div>
+
+                        </div>
+
+
+                        <div class="leadership-year">
+                            2025 — 2026
+                        </div>
+
+                    </div>
+
+
+                    <div class="leadership-item reveal">
+
+                        <div>
+
+                            <div class="leadership-role">
+                                Digital Head
+                            </div>
+
+                            <div class="leadership-org">
+                                Newsletter Committee — JBS
+                            </div>
+
+                        </div>
+
+
+                        <div class="leadership-year">
+                            2025 — PRESENT
+                        </div>
+
+                    </div>
+
+
+                    <div class="leadership-item reveal">
+
+                        <div>
+
+                            <div class="leadership-role">
+                                Class Representative
+                            </div>
+
+                            <div class="leadership-org">
+                                BBA Batch
+                            </div>
+
+                        </div>
+
+
+                        <div class="leadership-year">
+                            2024 — PRESENT
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             SKILLS
+        ========================= -->
+
+        <section>
+
+            <div class="container">
+
+
+                <div class="section-header reveal">
+
+                    <div>
+
+                        <div class="section-number">
+                            06 / SKILLS
+                        </div>
+
+                        <h2 class="section-title">
+                            What I<br>
+                            work with.
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="skills-grid reveal">
+
+
+                    <div class="skill-category">
+
+                        <h3>
+                            MARKETING
+                        </h3>
+
+                        <ul>
+
+                            <li>
+                                Social Media Management
+                            </li>
+
+                            <li>
+                                Branding
+                            </li>
+
+                            <li>
+                                Content Planning
+                            </li>
+
+                            <li>
+                                Content Strategy
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+
+                    <div class="skill-category">
+
+                        <h3>
+                            DESIGN
+                        </h3>
+
+                        <ul>
+
+                            <li>
+                                Canva Pro
+                            </li>
+
+                            <li>
+                                Basic Photoshop
+                            </li>
+
+                            <li>
+                                Visual Communication
+                            </li>
+
+                            <li>
+                                100+ Independent Projects
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+
+                    <div class="skill-category">
+
+                        <h3>
+                            TOOLS
+                        </h3>
+
+                        <ul>
+
+                            <li>
+                                MS Excel
+                            </li>
+
+                            <li>
+                                MS PowerPoint
+                            </li>
+
+                            <li>
+                                MS Word
+                            </li>
+
+                            <li>
+                                MS Project
+                            </li>
+
+                            <li>
+                                CapCut
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+
+                    <div class="skill-category">
+
+                        <h3>
+                            PEOPLE
+                        </h3>
+
+                        <ul>
+
+                            <li>
+                                Leadership
+                            </li>
+
+                            <li>
+                                Communication
+                            </li>
+
+                            <li>
+                                Team Management
+                            </li>
+
+                            <li>
+                                Problem Solving
+                            </li>
+
+                            <li>
+                                Creativity
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+
+                    <div class="skill-category">
+
+                        <h3>
+                            TECH
+                        </h3>
+
+                        <ul>
+
+                            <li>
+                                HTML
+                            </li>
+
+                            <li>
+                                Python
+                            </li>
+
+                            <li>
+                                SQL
+                            </li>
+
+                            <li>
+                                AI Tools
+                            </li>
+
+                            <li>
+                                Basic Web Development
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             PLAYGROUND
+        ========================= -->
+
+        <section
+            class="playground-section"
+            id="playground"
+        >
+
+            <div class="container">
+
+
+                <div class="section-number reveal">
+                    03 / PLAYGROUND
+                </div>
+
+
+                <h2 class="section-title reveal">
+
+                    Have a little<br>
+                    fun.
+
+                </h2>
+
+
+                <p class="playground-intro reveal">
+
+                    Think you can score?
+                    Move the ball and hit the target.
+                    But there's a goalkeeper now.
+
+                </p>
+
+
+                <!-- ONE SINGLE GAME -->
+
+                <div
+                    class="football-game reveal"
+                    id="footballGame"
+                >
+
+                    <div class="game-score">
+
+                        SCORE:
+                        <span id="footballScore">
+                            0
+                        </span>
+
+                        <span class="score-divider">
+                            |
+                        </span>
+
+                        ATTEMPTS:
+                        <span id="footballAttempts">
+                            0 / 3
+                        </span>
+
+                    </div>
+
+
+                    <div
+                        class="football-field"
+                        id="footballField"
+                    >
+
+
+                        <!-- GOAL -->
+
+                        <div class="goal">
+
+                            <svg
+                                viewBox="0 0 100 240"
+                                xmlns="http://www.w3.org/2000/svg"
+                                aria-hidden="true"
+                            >
+
+                                <path
+                                    d="M8 225V28L92 15V225"
+                                    fill="none"
+                                    stroke="rgba(255,255,255,0.72)"
+                                    stroke-width="3"
+                                />
+
+
+                                <path
+                                    d="
+                                        M15 55L88 44
+                                        M15 83L88 73
+                                        M15 111L88 101
+                                        M15 139L88 129
+                                        M15 167L88 157
+                                        M15 195L88 185
+                                    "
+                                    fill="none"
+                                    stroke="rgba(255,255,255,0.13)"
+                                    stroke-width="1"
+                                />
+
+
+                                <path
+                                    d="
+                                        M25 30V216
+                                        M42 27V213
+                                        M59 24V210
+                                        M76 21V207
+                                    "
+                                    fill="none"
+                                    stroke="rgba(255,255,255,0.10)"
+                                    stroke-width="1"
+                                />
+
+                            </svg>
+
+                        </div>
+
+
+                        <!-- GOALKEEPER -->
+
+                        <div
+                            class="goalkeeper"
+                            id="goalkeeper"
+                        >
+
+                            <svg
+                                viewBox="0 0 100 160"
+                                xmlns="http://www.w3.org/2000/svg"
+                                aria-hidden="true"
+                            >
+
+                                <!-- Head -->
+
+                                <circle
+                                    cx="50"
+                                    cy="25"
+                                    r="14"
+                                    fill="#f4f4f4"
+                                />
+
+
+                                <!-- Hair -->
+
+                                <path
+                                    d="
+                                        M37 23
+                                        Q40 7 52 9
+                                        Q65 9 66 23
+                                        Q57 17 49 18
+                                        Q43 18 37 23Z
+                                    "
+                                    fill="#1b1b1b"
+                                />
+
+
+                                <!-- Body -->
+
+                                <path
+                                    d="
+                                        M34 48
+                                        Q50 40 66 48
+                                        L75 98
+                                        Q50 108 25 98Z
+                                    "
+                                    fill="#1b84be"
+                                />
+
+
+                                <!-- Jersey highlight -->
+
+                                <path
+                                    d="M50 47V101"
+                                    stroke="#48b9f2"
+                                    stroke-width="3"
+                                    opacity="0.55"
+                                />
+
+
+                                <!-- Left arm -->
+
+                                <path
+                                    d="
+                                        M34 52
+                                        Q20 62 10 78
+                                    "
+                                    fill="none"
+                                    stroke="#f4f4f4"
+                                    stroke-width="9"
+                                    stroke-linecap="round"
+                                />
+
+
+                                <!-- Right arm -->
+
+                                <path
+                                    d="
+                                        M66 52
+                                        Q80 62 90 78
+                                    "
+                                    fill="none"
+                                    stroke="#f4f4f4"
+                                    stroke-width="9"
+                                    stroke-linecap="round"
+                                />
+
+
+                                <!-- Gloves -->
+
+                                <circle
+                                    cx="9"
+                                    cy="79"
+                                    r="7"
+                                    fill="#48b9f2"
+                                />
+
+                                <circle
+                                    cx="91"
+                                    cy="79"
+                                    r="7"
+                                    fill="#48b9f2"
+                                />
+
+
+                                <!-- Left leg -->
+
+                                <path
+                                    d="M39 98L32 139"
+                                    fill="none"
+                                    stroke="#f4f4f4"
+                                    stroke-width="11"
+                                    stroke-linecap="round"
+                                />
+
+
+                                <!-- Right leg -->
+
+                                <path
+                                    d="M61 98L68 139"
+                                    fill="none"
+                                    stroke="#f4f4f4"
+                                    stroke-width="11"
+                                    stroke-linecap="round"
+                                />
+
+
+                                <!-- Boots -->
+
+                                <path
+                                    d="M26 139H38"
+                                    stroke="#1b1b1b"
+                                    stroke-width="8"
+                                    stroke-linecap="round"
+                                />
+
+                                <path
+                                    d="M62 139H74"
+                                    stroke="#1b1b1b"
+                                    stroke-width="8"
+                                    stroke-linecap="round"
+                                />
+
+                            </svg>
+
+                        </div>
+
+
+                        <!-- FOOTBALL -->
+
+                        <div
+                            class="football-ball"
+                            id="footballBall"
+                        >
+
+                            <svg
+                                viewBox="0 0 100 100"
+                                xmlns="http://www.w3.org/2000/svg"
+                                aria-hidden="true"
+                            >
+
+                                <circle
+                                    cx="50"
+                                    cy="50"
+                                    r="45"
+                                    fill="#f4f4f4"
+                                />
+
+
+                                <path
+                                    d="
+                                        M50 27
+                                        L63 37
+                                        L58 53
+                                        H42
+                                        L37 37Z
+                                    "
+                                    fill="#101010"
+                                />
+
+
+                                <path
+                                    d="
+                                        M50 27L50 10
+                                        M63 37L82 30
+                                        M58 53L72 72
+                                        M42 53L28 72
+                                        M37 37L18 30
+                                    "
+                                    fill="none"
+                                    stroke="#101010"
+                                    stroke-width="4"
+                                />
+
+
+                                <circle
+                                    cx="50"
+                                    cy="50"
+                                    r="45"
+                                    fill="none"
+                                    stroke="rgba(255,255,255,0.45)"
+                                    stroke-width="2"
+                                />
+
+                            </svg>
+
+                        </div>
+
+
+                    </div>
+
+
+                    <div
+                        class="game-message"
+                        id="gameMessage"
+                    >
+                        Press START GAME to begin.
+                    </div>
+
+
+                    <button
+                        class="football-start"
+                        id="footballStart"
+                        type="button"
+                    >
+                        START GAME
+                    </button>
+
+                </div>
+
+
+                <!-- =========================
+                     GAME OVER MODAL
+                ========================= -->
+
+                <div
+                    class="football-modal"
+                    id="footballModal"
+                >
+
+                    <div
+                        class="football-modal-overlay"
+                        id="footballModalOverlay"
+                    ></div>
+
+
+                    <div class="football-modal-box">
+
+
+                        <button
+                            class="football-modal-close"
+                            id="footballModalClose"
+                            type="button"
+                            aria-label="Close"
+                        >
+                            ×
+                        </button>
+
+
+                        <div class="section-number">
+                            GAME OVER
+                        </div>
+
+
+                        <h2>
+
+                            WANT  THIS<br>
+
+                            <span>
+                                IN YOUR WEB?
+                            </span>
+
+                        </h2>
+
+
+                        <p>
+
+                            Like this little interaction?
+                            I can build something similar for your website too.
+
+                        </p>
+
+
+                        <div class="football-final-score">
+
+
+                            <div>
+
+                                <strong id="finalGoals">
+                                    0
+                                </strong>
+
+                                <span>
+                                    GOALS
+                                </span>
+
+                            </div>
+
+
+                            <div>
+
+                                <strong id="finalSaves">
+                                    0
+                                </strong>
+
+                                <span>
+                                    SAVES
+                                </span>
+
+                            </div>
+
+
+                        </div>
+
+
+                        <div class="football-modal-actions">
+
+
+                            <a
+                                href="#contact"
+                                class="btn btn-primary"
+                                id="footballContact"
+                            >
+                                Contact Me ↗
+                            </a>
+
+
+                            <button
+                                class="btn btn-secondary"
+                                id="footballPlayAgain"
+                                type="button"
+                            >
+                                Play Again
+                            </button>
+
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             PORTFOLIO
+        ========================= -->
+
+        <section>
+
+            <div class="container">
+
+
+                <div class="portfolio-cta reveal">
+
+
+                    <div class="section-number">
+                        08 / PORTFOLIO
+                    </div>
+
+
+                    <h2>
+
+                        Want to see<br>
+                        the actual work?
+
+                    </h2>
+
+
+                    <p>
+
+                        Explore my collection of 150+
+                        designs and creative projects.
+
+                    </p>
+
+
+                    <a
+                        href="https://drive.google.com/drive/folders/1J_1egom7vLjJPYLoqeVITNGtQWPqqdx3?usp=sharing"
+                        target="_blank"
+                        class="btn btn-primary"
+                    >
+                        Open Portfolio ↗
+                    </a>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             CONTACT
+        ========================= -->
+
+        <section id="contact">
+
+            <div class="container">
+
+
+                <div class="contact-grid">
+
+
+                    <div class="contact-left reveal">
+
+
+                        <div class="section-number">
+                            09 / CONTACT
+                        </div>
+
+
+                        <h2>
+
+                            Let's make<br>
+                            something.
+
+                        </h2>
+
+
+                        <p>
+
+                            Have a project, collaboration or opportunity in mind?
+                            Tell me what you're working on.
+
+                        </p>
+
+
+                        <div class="socials">
+
+
+                            <a
+                                href="https://www.linkedin.com/in/kamil-ahmad-khan-"
+                                target="_blank"
+                                class="social"
+                            >
+                                LinkedIn ↗
+                            </a>
+
+
+                            <a
+                                href="https://www.instagram.com/kamilkhan_08_/"
+                                target="_blank"
+                                class="social"
+                            >
+                                Instagram ↗
+                            </a>
+
+
+                            <a
+                                href="https://wa.me/919625130023"
+                                target="_blank"
+                                class="social"
+                            >
+                                WhatsApp ↗
+                            </a>
+
+
+                            <a
+                                href="mailto:kamilahmadkhan666@gmail.com"
+                                class="social"
+                            >
+                                Email ↗
+                            </a>
+
+
+                        </div>
+
+                    </div>
+
+
+                    <form
+                        class="contact-form reveal"
+                        id="contactForm"
+                    >
+
+
+                        <div class="input-group">
+
+                            <label for="name">
+                                Your Name
+                            </label>
+
+
+                            <input
+                                type="text"
+                                id="name"
+                                name="name"
+                                placeholder="Abhinav Mishra"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="input-group">
+
+                            <label for="email">
+                                Email
+                            </label>
+
+
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                placeholder="abhinav@example.com"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="input-group">
+
+                            <label for="phone">
+                                Phone Number
+                            </label>
+
+
+                            <input
+                                type="tel"
+                                id="phone"
+                                name="phone"
+                                placeholder="+91 XXXXX XXXXX"
+                            >
+
+                        </div>
+
+
+                        <div class="input-group">
+
+                            <label for="work">
+                                Type of Work
+                            </label>
+
+
+                            <select
+                                id="work"
+                                name="work"
+                                required
+                            >
+
+                                <option value="">
+                                    Select an option
+                                </option>
+
+                                <option value="Social Media">
+                                    Social Media
+                                </option>
+
+                                <option value="Branding">
+                                    Branding
+                                </option>
+
+                                <option value="Design">
+                                    Design
+                                </option>
+       
+                                <option value="Web Development">
+                                    Web Development
+                                </option>
+
+                                <option value="Other">
+                                    Other
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="input-group">
+
+                            <label for="message">
+                                Message
+                            </label>
+
+
+                            <textarea
+                                id="message"
+                                name="message"
+                                placeholder="Tell me a little about your project..."
+                                required
+                            ></textarea>
+
+                        </div>
+
+
+                        <button
+                            type="submit"
+                            class="btn btn-primary submit-btn"
+                        >
+                            Send Inquiry →
+                        </button>
+
+
+                    </form>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- =========================
+         FOOTER
+    ========================= -->
+
+    <footer>
+
+        <div class="container footer-inner">
+
+            <span>
+                KAMIL AHMAD KHAN
+            </span>
+
+
+            <span>
+                BUILT WITH MY OWN HAND
+            </span>
+
+        </div>
+
+    </footer>
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================= -->
+
+    <script>
+
+
+        /* =========================
+           SCROLL REVEAL
+        ========================= */
+
+        const revealElements =
+            document.querySelectorAll(".reveal");
+
+
+        const observer =
+            new IntersectionObserver(
+                (entries) => {
+
+                    entries.forEach(entry => {
+
+                        if (entry.isIntersecting) {
+
+                            entry.target.classList.add(
+                                "visible"
+                            );
+
+                        }
+
+                    });
+
+                },
+                {
+                    threshold: 0.12
+                }
+            );
+
+
+        revealElements.forEach(
+            element =>
+                observer.observe(element)
+        );
+
+
+        /* =========================
+           CONTACT FORM
+        ========================= */
+
+        const contactForm =
+            document.getElementById(
+                "contactForm"
+            );
+
+
+        contactForm.addEventListener(
+            "submit",
+            function(event) {
+
+                event.preventDefault();
+
+
+                const name =
+                    document.getElementById(
+                        "name"
+                    ).value;
+
+
+                const email =
+                    document.getElementById(
+                        "email"
+                    ).value;
+
+
+                const phone =
+                    document.getElementById(
+                        "phone"
+                    ).value;
+
+
+                const work =
+                    document.getElementById(
+                        "work"
+                    ).value;
+
+
+                const message =
+                    document.getElementById(
+                        "message"
+                    ).value;
+
+
+                const subject =
+                    encodeURIComponent(
+                        `Portfolio Inquiry — ${work}`
+                    );
+
+
+                const body =
+                    encodeURIComponent(
+                        `Name: ${name}\n` +
+                        `Email: ${email}\n` +
+                        `Phone: ${phone}\n` +
+                        `Type of Work: ${work}\n\n` +
+                        `Message:\n${message}`
+                    );
+
+
+            }
+        );
+
+
+        /* =========================
+           MOUSE PARALLAX
+        ========================= */
+
+        document.addEventListener(
+            "mousemove",
+            (event) => {
+
+                const x =
+                    (
+                        event.clientX /
+                        window.innerWidth -
+                        0.5
+                    ) * 10;
+
+
+                const y =
+                    (
+                        event.clientY /
+                        window.innerHeight -
+                        0.5
+                    ) * 10;
+
+
+                const hero =
+                    document.querySelector(
+                        ".hero h1"
+                    );
+
+
+                if (
+                    hero &&
+                    window.innerWidth > 900
+                ) {
+
+                    hero.style.transform =
+                        `translate(
+                            ${x * 0.35}px,
+                            ${y * 0.35}px
+                        )`;
+
+                }
+
+            }
+        );
+
+
+        /* =========================
+           CUSTOM CURSOR
+        ========================= */
+
+        const cursor =
+            document.querySelector(
+                ".cursor"
+            );
+
+
+        const projectBoxes =
+            document.querySelectorAll(
+                ".project"
+            );
+
+
+        projectBoxes.forEach(box => {
+
+
+            box.addEventListener(
+                "mouseenter",
+                function() {
+
+                    cursor.style.display =
+                        "block";
+
+                }
+            );
+
+
+            box.addEventListener(
+                "mouseleave",
+                function() {
+
+                    cursor.style.display =
+                        "none";
+
+                }
+            );
+
+
+            box.addEventListener(
+                "mousemove",
+                function(e) {
+
+                    cursor.style.left =
+                        e.clientX + "px";
+
+
+                    cursor.style.top =
+                        e.clientY + "px";
+
+                }
+            );
+
+
+        });
+
+
+        /* =========================
+           3D PROJECT CARDS
+        ========================= */
+
+        const cards3D =
+            document.querySelectorAll(
+                ".project"
+            );
+
+
+        cards3D.forEach(card => {
+
+
+            card.addEventListener(
+                "mousemove",
+                function(e) {
+
+
+                    const rect =
+                        card.getBoundingClientRect();
+
+
+                    const x =
+                        e.clientX -
+                        rect.left;
+
+
+                    const y =
+                        e.clientY -
+                        rect.top;
+
+
+                    const centerX =
+                        rect.width / 2;
+
+
+                    const centerY =
+                        rect.height / 2;
+
+
+                    const rotateY =
+                        ((x - centerX) /
+                        centerX) * 6;
+
+
+                    const rotateX =
+                        ((centerY - y) /
+                        centerY) * 6;
+
+
+                    card.style.setProperty(
+                        "--rotate-x",
+                        rotateX + "deg"
+                    );
+
+
+                    card.style.setProperty(
+                        "--rotate-y",
+                        rotateY + "deg"
+                    );
+
+
+                    card.style.setProperty(
+                        "--mouse-x",
+                        x + "px"
+                    );
+
+
+                    card.style.setProperty(
+                        "--mouse-y",
+                        y + "px"
+                    );
+
+                }
+            );
+
+
+            card.addEventListener(
+                "mouseleave",
+                function() {
+
+
+                    card.style.setProperty(
+                        "--rotate-x",
+                        "0deg"
+                    );
+
+
+                    card.style.setProperty(
+                        "--rotate-y",
+                        "0deg"
+                    );
+
+                }
+            );
+
+
+        });
+
+
+        /* =====================================================
+           FOOTBALL GAME
+        ===================================================== */
+
+        const footballGame =
+            document.getElementById(
+                "footballGame"
+            );
+
+
+        const footballField =
+            document.getElementById(
+                "footballField"
+            );
+
+
+        const footballBall =
+            document.getElementById(
+                "footballBall"
+            );
+
+
+        const footballScore =
+            document.getElementById(
+                "footballScore"
+            );
+
+
+        const footballAttempts =
+            document.getElementById(
+                "footballAttempts"
+            );
+
+
+        const footballMessage =
+            document.getElementById(
+                "gameMessage"
+            );
+
+
+        const footballStart =
+            document.getElementById(
+                "footballStart"
+            );
+
+
+        const goalkeeper =
+            document.getElementById(
+                "goalkeeper"
+            );
+
+
+        const footballModal =
+            document.getElementById(
+                "footballModal"
+            );
+
+
+        const footballModalClose =
+            document.getElementById(
+                "footballModalClose"
+            );
+
+
+        const footballModalOverlay =
+            document.getElementById(
+                "footballModalOverlay"
+            );
+
+
+        const footballPlayAgain =
+            document.getElementById(
+                "footballPlayAgain"
+            );
+
+
+        const footballContact =
+            document.getElementById(
+                "footballContact"
+            );
+
+
+        const finalGoals =
+            document.getElementById(
+                "finalGoals"
+            );
+
+
+        const finalSaves =
+            document.getElementById(
+                "finalSaves"
+            );
+
+
+        let footballPlaying = false;
+
+        let score = 0;
+
+        let shots = 0;
+
+        let saves = 0;
+
+        let shotResults = [];
+
+        let keeperMovementTimer = null;
+
+        let shotAnimating = false;
+
+
+        /* =========================
+           CREATE EXACTLY 4 GOALS
+           AND 3 SAVES
+        ========================= */
+
+        function createShotResults() {
+
+            shotResults = [
+
+                "goal",
+                "goal",
+                "goal",
+                "goal",
+
+                "save",
+                "save",
+                "save"
+
+            ];
+
+
+            for (
+                let i = shotResults.length - 1;
+                i > 0;
+                i--
+            ) {
+
+                const j =
+                    Math.floor(
+                        Math.random() * (i + 1)
+                    );
+
+
+                [
+                    shotResults[i],
+                    shotResults[j]
+                ] =
+                [
+                    shotResults[j],
+                    shotResults[i]
+                ];
+
+            }
+
+        }
+
+
+        /* =========================
+           MOVE GOALKEEPER
+        ========================= */
+
+        function moveGoalkeeper() {
+
+            if (!footballPlaying) {
+                return;
+            }
+
+
+            const keeperPosition =
+                34 +
+                Math.random() * 32;
+
+
+            goalkeeper.style.top =
+                keeperPosition + "%";
+
+
+            keeperMovementTimer =
+                setTimeout(
+                    moveGoalkeeper,
+                    700
+                );
+
+        }
+
+
+        /* =========================
+           STOP GOALKEEPER
+        ========================= */
+
+        function stopGoalkeeper() {
+
+            if (keeperMovementTimer) {
+
+                clearTimeout(
+                    keeperMovementTimer
+                );
+
+                keeperMovementTimer = null;
+
+            }
+
+        }
+
+
+        /* =========================
+           RESET VISUALS
+        ========================= */
+
+        function resetFootballVisuals() {
+
+            footballGame.classList.remove(
+                "goal-scored",
+                "saved"
+            );
+
+
+            goalkeeper.classList.remove(
+                "saving-left",
+                "saving-right",
+                "beaten"
+            );
+
+
+            goalkeeper.style.top =
+                "50%";
+
+
+            footballBall.style.left =
+                "50%";
+
+
+            footballBall.style.top =
+                "50%";
+
+        }
+
+
+        /* =========================
+           CLOSE MODAL
+        ========================= */
+
+        function closeFootballModal() {
+
+            footballModal.classList.remove(
+                "active"
+            );
+
+        }
+
+
+        /* =========================
+           SHOW GAME OVER MODAL
+        ========================= */
+
+        function showFootballModal() {
+
+            finalGoals.textContent =
+                score;
+
+
+            finalSaves.textContent =
+                saves;
+
+
+            footballModal.classList.add(
+                "active"
+            );
+
+        }
+
+
+        /* =========================
+           START / RESTART GAME
+        ========================= */
+
+        function startFootballGame() {
+
+            stopGoalkeeper();
+
+
+            footballPlaying = true;
+
+            shotAnimating = false;
+
+            score = 0;
+
+            saves = 0;
+
+            shots = 0;
+
+
+            createShotResults();
+
+
+            footballScore.textContent =
+                "0";
+
+
+            footballAttempts.textContent =
+                "0 / 3";
+
+
+            footballMessage.textContent =
+                "3 shots. Beat the goalkeeper.";
+
+
+            footballStart.textContent =
+                "PLAYING...";
+
+
+            footballStart.disabled =
+                true;
+
+
+            footballGame.dataset.shooting =
+                "false";
+
+
+            resetFootballVisuals();
+
+
+            closeFootballModal();
+
+
+            moveGoalkeeper();
+
+        }
+
+
+        footballStart.addEventListener(
+            "click",
+            startFootballGame
+        );
+
+
+        footballPlayAgain.addEventListener(
+            "click",
+            startFootballGame
+        );
+
+
+        footballModalClose.addEventListener(
+            "click",
+            closeFootballModal
+        );
+
+
+        footballModalOverlay.addEventListener(
+            "click",
+            closeFootballModal
+        );
+
+
+        footballContact.addEventListener(
+            "click",
+            closeFootballModal
+        );
+
+
+        /* =========================
+           ESCAPE TO CLOSE MODAL
+        ========================= */
+
+        document.addEventListener(
+            "keydown",
+            function(event) {
+
+                if (
+                    event.key === "Escape"
+                ) {
+
+                    closeFootballModal();
+
+                }
+
+            }
+        );
+
+
+        /* =========================
+           MOVE BALL WITH CURSOR
+        ========================= */
+
+        footballField.addEventListener(
+            "mousemove",
+            function(e) {
+
+                if (!footballPlaying) {
+                    return;
+                }
+
+
+                const fieldRect =
+                    footballField.getBoundingClientRect();
+
+
+                const mouseX =
+                    e.clientX -
+                    fieldRect.left;
+
+
+                const mouseY =
+                    e.clientY -
+                    fieldRect.top;
+
+
+                const ballSize =
+                    window.innerWidth <= 600
+                        ? 30
+                        : 36;
+
+
+                const x =
+                    Math.max(
+                        ballSize / 2,
+                        Math.min(
+                            mouseX,
+                            fieldRect.width -
+                            ballSize / 2
+                        )
+                    );
+
+
+                const y =
+                    Math.max(
+                        ballSize / 2,
+                        Math.min(
+                            mouseY,
+                            fieldRect.height -
+                            ballSize / 2
+                        )
+                    );
+
+
+                footballBall.style.left =
+                    x + "px";
+
+
+                footballBall.style.top =
+                    y + "px";
+
+            }
+        );
+
+
+        /* =========================
+           SHOOT
+        ========================= */
+
+        footballField.addEventListener(
+            "click",
+            function(e) {
+
+                if (!footballPlaying) {
+                    return;
+                }
+
+
+                if (shotAnimating) {
+                    return;
+                }
+
+
+                if (shots >= 3) {
+                    return;
+                }
+
+
+                const fieldRect =
+                    footballField.getBoundingClientRect();
+
+
+                const mouseX =
+                    e.clientX -
+                    fieldRect.left;
+
+
+                const mouseY =
+                    e.clientY -
+                    fieldRect.top;
+
+
+                /*
+                    The goal is on the right side.
+                    Only clicks inside the visible
+                    goal zone count as shots.
+                */
+
+                const goalZoneStart =
+                    fieldRect.width - 150;
+
+
+                const goalZoneTop =
+                    fieldRect.height * 0.18;
+
+
+                const goalZoneBottom =
+                    fieldRect.height * 0.82;
+
+
+                const insideGoalArea =
+                    mouseX >= goalZoneStart &&
+                    mouseY >= goalZoneTop &&
+                    mouseY <= goalZoneBottom;
+
+
+                if (!insideGoalArea) {
+
+                    footballMessage.textContent =
+                        "Aim inside the goal area.";
+
+                    return;
+
+                }
+
+
+                shotAnimating = true;
+
+
+                shots++;
+
+
+                footballAttempts.textContent =
+                    `${shots} / 3`;
+
+
+                const result =
+                    shotResults[
+                        shots - 1
+                    ];
+
+
+                const verticalMidpoint =
+                    fieldRect.height / 2;
+
+
+                const keeperDirection =
+                    mouseY <
+                    verticalMidpoint
+                        ? "saving-left"
+                        : "saving-right";
+
+
+                /* =========================
+                   GOAL
+                ========================= */
+
+                if (
+                    result === "goal"
+                ) {
+
+                    score++;
+
+
+                    footballScore.textContent =
+                        score;
+
+
+                    goalkeeper.classList.add(
+                        "beaten"
+                    );
+
+
+                    footballGame.classList.add(
+                        "goal-scored"
+                    );
+
+
+                    footballMessage.textContent =
+                        `GOAL! ⚽ ${shots}/3`;
+
+                }
+
+
+                /* =========================
+                   SAVE
+                ========================= */
+
+                else {
+
+                    saves++;
+
+
+                    goalkeeper.classList.add(
+                        keeperDirection
+                    );
+
+
+                    footballGame.classList.add(
+                        "saved"
+                    );
+
+
+                    footballMessage.textContent =
+                        `SAVED! 🧤 ${shots}/3`;
+
+                }
+
+
+                /*
+                    Reset the shot animation.
+                */
+
+                setTimeout(
+                    function() {
+
+                        footballGame.classList.remove(
+                            "goal-scored",
+                            "saved"
+                        );
+
+
+                        goalkeeper.classList.remove(
+                            "saving-left",
+                            "saving-right",
+                            "beaten"
+                        );
+
+
+                        footballBall.style.left =
+                            "50%";
+
+
+                        footballBall.style.top =
+                            "50%";
+
+
+                        shotAnimating = false;
+
+
+                        /*
+                            End the game only after
+                            the seventh animation.
+                        */
+
+                        if (
+                            shots >= 3
+                        ) {
+
+                            finishFootballGame();
+
+                        }
+
+                    },
+                    700
+                );
+
+            }
+        );
+
+
+        /* =========================
+           FINISH GAME
+        ========================= */
+
+        function finishFootballGame() {
+
+            footballPlaying = false;
+
+
+            stopGoalkeeper();
+
+
+            footballStart.textContent =
+                "PLAY AGAIN";
+
+
+            footballStart.disabled =
+                false;
+
+
+            footballMessage.textContent =
+                `FULL TIME — ${score} GOALS / 3 SHOTS`;
+
+
+            footballBall.style.left =
+                "50%";
+
+
+            footballBall.style.top =
+                "50%";
+
+
+            setTimeout(
+                function() {
+
+                    showFootballModal();
+
+                },
+                350
+            );
+
+        }
+
+
+        /* =========================
+           INITIAL STATE
+        ========================= */
+
+        footballAttempts.textContent =
+            "0 / 3";
+
+
+        footballScore.textContent =
+            "0";
+
+
+        footballMessage.textContent =
+            "Press START GAME to begin.";
+
+
+        footballGame.dataset.shooting =
+            "false";
+
+
+        footballBall.style.pointerEvents =
+            "none";
+
+
+        goalkeeper.style.pointerEvents =
+            "none";
+
+
+    </script>
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const form = document.getElementById("contactForm");
+    const submitButton = form.querySelector(".submit-btn");
+
+    form.addEventListener("submit", async function (e) {
+
+        e.preventDefault();
+
+        console.log("FORM SUBMITTED");
+
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+        const phone = document.getElementById("phone").value;
+        const work = document.getElementById("work").value;
+        const message = document.getElementById("message").value;
+
+        submitButton.textContent = "Sending...";
+        submitButton.disabled = true;
+
+        try {
+
+            const response = await fetch(
+                "http://localhost:3000/send-inquiry",
+                {
+                    method: "POST",
+
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+
+                    body: JSON.stringify({
+                        name: name,
+                        email: email,
+                        phone: phone,
+                        work: work,
+                        message: message
+                    })
+                }
+            );
+
+            const data = await response.json();
+
+            console.log("SERVER RESPONSE:", data);
+
+            if (data.success) {
+
+                alert("Inquiry sent successfully!");
+
+                form.reset();
+
+            } else {
+
+                alert("Failed to send inquiry.");
+
+            }
+
+        } catch (error) {
+
+            console.error("FORM ERROR:", error);
+
+            alert("Could not connect to the server.");
+
+        } finally {
+
+            submitButton.textContent = "Send Inquiry →";
+            submitButton.disabled = false;
+
+        }
+
+    });
+
+});
+
+</script>	
+});
+
+<script>
+const themeToggle = document.getElementById("theme-toggle");
+
+themeToggle.addEventListener("click", () => {
+    document.body.classList.toggle("dark-theme");
+
+    if (document.body.classList.contains("dark-theme")) {
+        themeToggle.textContent = "☀";
+    } else {
+        themeToggle.textContent = "☾";
+    }
+});
+</script>	
+
+
+</body>
+</html>
