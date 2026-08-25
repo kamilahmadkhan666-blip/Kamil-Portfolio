@@ -5118,7 +5118,6 @@ themeToggle.addEventListener("click", () => {
 
 <script>
 document.getElementById("contactForm").addEventListener("submit", async function(e) {
-
     e.preventDefault();
 
     const form = this;
@@ -5128,7 +5127,6 @@ document.getElementById("contactForm").addEventListener("submit", async function
     button.disabled = true;
 
     try {
-
         const response = await fetch(
             "https://formsubmit.co/ajax/kamilahmadkhan666@gmail.com",
             {
@@ -5145,36 +5143,27 @@ document.getElementById("contactForm").addEventListener("submit", async function
         console.log("FORMSUBMIT RESPONSE:", data);
 
         if (data.success) {
-
             alert("Message sent successfully!");
-
             form.reset();
-
             button.textContent = "Message Sent ✓";
 
-            setTimeout(function() {
+            setTimeout(() => {
                 button.textContent = "Send Inquiry →";
                 button.disabled = false;
             }, 3000);
-
         } else {
-
             alert("Something went wrong. Please try again.");
-
             button.textContent = "Send Inquiry →";
             button.disabled = false;
         }
 
     } catch (error) {
-
         console.error("FORM ERROR:", error);
-
         alert("Could not send the message. Please try again.");
 
         button.textContent = "Send Inquiry →";
         button.disabled = false;
     }
-
 });
 </script>
 
