@@ -4082,11 +4082,12 @@ body,
 
 
                         <button
-                            type="submit"
-                            class="btn btn-primary submit-btn"
-                        >
-                            Send Inquiry →
-                        </button>
+                                type="button"
+                                class="btn btn-primary submit-btn"
+                                id="sendInquiryButton"
+                         >
+                                Send Inquiry →
+                         </button>
 
 
                     </form>
@@ -5126,7 +5127,7 @@ document.getElementById("contactForm").addEventListener("submit", async function
     button.textContent = "Sending...";
     button.disabled = true;
 
-    try { 
+    try {
 
         const response = await fetch(
             "https://formsubmit.co/ajax/kamilahmadkhan666@gmail.com",
@@ -5157,6 +5158,8 @@ document.getElementById("contactForm").addEventListener("submit", async function
             }, 3000);
 
         } else {
+
+            console.error("FORMSUBMIT ERROR:", data);
 
             alert("Something went wrong. Please try again.");
 
