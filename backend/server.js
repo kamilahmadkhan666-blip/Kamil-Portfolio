@@ -11,7 +11,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // Serve portfolio files
-app.use("/projects", express.static(path.join(__dirname, "projects")));
+app.use(express.static(path.join(__dirname, "..")));
 
 app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, "..", "!DOCTYPE html.html"));
