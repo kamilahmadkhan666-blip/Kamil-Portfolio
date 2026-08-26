@@ -11,7 +11,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // Serve portfolio files
-app.use(express.static(path.join(__dirname, "..")));
+app.use("/projects", express.static(path.join(__dirname, "projects")));
 
 app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, "..", "!DOCTYPE html.html"));
@@ -59,9 +59,7 @@ ${message}`
     }
 });
 
-const fs = require("fs");
 
-console.log("ROOT FILES:", fs.readdirSync(path.join(__dirname, "..")));
 
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
