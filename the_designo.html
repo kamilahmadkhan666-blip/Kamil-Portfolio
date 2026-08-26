@@ -1,0 +1,1695 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>The Design'O — Kamil Ahmad Khan</title>
+
+    <meta
+        name="description"
+        content="The Design'O project by Kamil Ahmad Khan."
+    >
+
+    <style>
+
+        @import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Manrope:wght@400;500;600;700;800&display=swap');
+
+
+        /* =========================
+           VARIABLES
+        ========================= */
+
+        :root {
+
+            --bg: #070707;
+            --card: #101010;
+            --card-hover: #151515;
+
+            --text: #f4f4f4;
+            --muted: #929292;
+
+            --blue: #1b84be;
+            --blue-light: #48b9f2;
+
+            --border: rgba(255,255,255,0.09);
+
+            --max-width: 1200px;
+        }
+
+
+        /* =========================
+           RESET
+        ========================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+
+        body {
+
+            background: var(--bg);
+
+            color: var(--text);
+
+            font-family: "Manrope", sans-serif;
+
+            overflow-x: hidden;
+        }
+
+
+        a {
+
+            color: inherit;
+
+            text-decoration: none;
+        }
+
+
+        /* =========================
+           BACKGROUND
+        ========================= */
+
+        body::before {
+
+            content: "";
+
+            position: fixed;
+
+            inset: 0;
+
+            pointer-events: none;
+
+            background:
+
+                radial-gradient(
+                    circle at 80% 10%,
+                    rgba(27,132,190,0.13),
+                    transparent 30%
+                ),
+
+                radial-gradient(
+                    circle at 10% 60%,
+                    rgba(27,132,190,0.05),
+                    transparent 25%
+                );
+
+            z-index: -2;
+        }
+
+
+        body::after {
+
+            content: "";
+
+            position: fixed;
+
+            inset: 0;
+
+            pointer-events: none;
+
+            opacity: 0.035;
+
+            z-index: -1;
+
+            background-image:
+
+                linear-gradient(
+                    rgba(255,255,255,0.4) 1px,
+                    transparent 1px
+                ),
+
+                linear-gradient(
+                    90deg,
+                    rgba(255,255,255,0.4) 1px,
+                    transparent 1px
+                );
+
+            background-size: 70px 70px;
+        }
+
+
+        .container {
+
+            width: min(92%, var(--max-width));
+
+            margin: auto;
+        }
+
+
+        /* =========================
+           NAVBAR
+        ========================= */
+
+        nav {
+
+            position: fixed;
+
+            top: 20px;
+
+            left: 50%;
+
+            transform: translateX(-50%);
+
+            width: min(92%, 1100px);
+
+            padding: 14px 20px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            background: rgba(10,10,10,0.72);
+
+            border: 1px solid var(--border);
+
+            border-radius: 100px;
+
+            backdrop-filter: blur(20px);
+
+            z-index: 1000;
+        }
+
+
+        .logo {
+
+            font-weight: 800;
+
+            letter-spacing: -1px;
+        }
+
+
+        .logo span {
+
+            color: var(--blue-light);
+        }
+
+
+        .back-button {
+
+            padding: 9px 16px;
+
+            border: 1px solid var(--border);
+
+            border-radius: 50px;
+
+            font-size: 12px;
+
+            color: var(--muted);
+
+            transition: 0.3s;
+        }
+
+
+        .back-button:hover {
+
+            background: white;
+
+            color: black;
+
+            transform: translateY(-2px);
+        }
+
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .project-hero {
+
+            min-height: 85vh;
+
+            display: flex;
+
+            align-items: center;
+
+            padding-top: 120px;
+        }
+
+
+        .eyebrow {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+            color: var(--blue-light);
+
+            font-family: "DM Mono", monospace;
+
+            font-size: 12px;
+
+            margin-bottom: 25px;
+        }
+
+
+        .eyebrow::before {
+
+            content: "";
+
+            width: 30px;
+
+            height: 1px;
+
+            background: var(--blue-light);
+        }
+
+
+        .project-hero h1 {
+
+            font-size: clamp(
+                4rem,
+                12vw,
+                10rem
+            );
+
+            line-height: 0.82;
+
+            letter-spacing: -0.08em;
+
+            max-width: 1100px;
+        }
+
+
+        .outline {
+
+            color: transparent;
+
+            -webkit-text-stroke:
+                1px rgba(255,255,255,0.5);
+        }
+
+
+        .hero-description {
+
+            max-width: 680px;
+
+            margin-top: 50px;
+
+            color: var(--muted);
+
+            font-size: 16px;
+
+            line-height: 1.8;
+        }
+
+
+        /* =========================
+           PROJECT META
+        ========================= */
+
+        .project-meta {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            border-top:
+                1px solid var(--border);
+
+            border-bottom:
+                1px solid var(--border);
+        }
+
+
+        .meta-item {
+
+            padding: 35px 25px;
+
+            border-right:
+                1px solid var(--border);
+        }
+
+
+        .meta-item:last-child {
+
+            border-right: none;
+        }
+
+
+        .meta-label {
+
+            color: var(--muted);
+
+            font-family: "DM Mono", monospace;
+
+            font-size: 10px;
+
+            margin-bottom: 12px;
+        }
+
+
+        .meta-value {
+
+            font-size: 15px;
+
+            font-weight: 600;
+        }
+
+
+        /* =========================
+           SECTIONS
+        ========================= */
+
+        section {
+
+            padding: 50px 0;
+        }
+
+
+        .section-number {
+
+            color: var(--blue-light);
+
+            font-family: "DM Mono", monospace;
+
+            font-size: 11px;
+
+            margin-bottom: 15px;
+        }
+
+
+        .section-title {
+
+            font-size:
+                clamp(2.8rem, 6vw, 6rem);
+
+            letter-spacing: -0.07em;
+
+            line-height: 0.9;
+
+            margin-bottom: 60px;
+        }
+
+
+        /* =========================
+           OVERVIEW
+        ========================= */
+
+        .overview-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                1fr 1fr;
+
+            gap: 80px;
+        }
+
+
+        .overview-text {
+
+            font-size:
+                clamp(1.5rem, 3vw, 2.6rem);
+
+            line-height: 1.2;
+
+            letter-spacing: -0.04em;
+        }
+
+
+        .overview-text span {
+
+            color: var(--muted);
+        }
+
+
+        .overview-details {
+
+            display: grid;
+
+            gap: 1px;
+
+            background: var(--border);
+
+            border: 1px solid var(--border);
+        }
+
+
+        .overview-detail {
+
+            background: var(--card);
+
+            padding: 25px;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            gap: 20px;
+        }
+
+
+        .detail-label {
+
+            color: var(--muted);
+
+            font-family: "DM Mono", monospace;
+
+            font-size: 10px;
+        }
+
+
+        .detail-value {
+
+            text-align: right;
+
+            font-size: 14px;
+        }
+
+
+        /* =========================
+           EXPERIENCE
+        ========================= */
+
+        .experience-list {
+
+            border-top:
+                1px solid var(--border);
+        }
+
+
+        .experience {
+
+            display: grid;
+
+            grid-template-columns:
+                80px 1fr 220px;
+
+            gap: 30px;
+
+            padding: 35px 0;
+
+            border-bottom:
+                1px solid var(--border);
+        }
+
+
+        .experience-index {
+
+            color: var(--blue-light);
+
+            font-family: "DM Mono", monospace;
+
+            font-size: 12px;
+        }
+
+
+        .experience h3 {
+
+            font-size: 20px;
+
+            margin-bottom: 7px;
+        }
+
+
+        .experience-description {
+
+            margin-top: 18px;
+
+            color: var(--muted);
+
+            font-size: 13px;
+
+            line-height: 1.7;
+
+            max-width: 650px;
+        }
+
+
+        .experience-date {
+
+            text-align: right;
+
+            color: var(--muted);
+
+            font-family: "DM Mono", monospace;
+
+            font-size: 11px;
+        }
+
+
+        /* =========================
+           WORK
+        ========================= */
+
+        .work-intro {
+
+            max-width: 650px;
+
+            color: var(--muted);
+
+            line-height: 1.8;
+
+            margin-top: -30px;
+
+            margin-bottom: 50px;
+        }
+
+
+        .work-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 20px;
+        }
+
+
+        .work-item {
+
+            position: relative;
+
+            overflow: hidden;
+
+            background: var(--card);
+
+            border: 1px solid var(--border);
+
+            min-height: 450px;
+
+            transition: 0.4s;
+        }
+
+
+        .work-item:hover {
+
+            transform: translateY(-8px);
+
+            background: var(--card-hover);
+        }
+
+
+        .work-item img {
+
+            width: 100%;
+
+            height: 100%;
+
+            min-height: 450px;
+
+            object-fit: cover;
+
+            display: block;
+
+            transition: 0.5s;
+        }
+
+
+        .work-item:hover img {
+
+            transform: scale(1.04);
+        }
+
+
+        .work-overlay {
+
+            position: absolute;
+
+            left: 0;
+
+            right: 0;
+
+            bottom: 0;
+
+            padding: 30px;
+
+            background:
+                linear-gradient(
+                    transparent,
+                    rgba(0,0,0,0.9)
+                );
+        }
+
+
+        .work-number {
+
+            color: var(--blue-light);
+
+            font-family: "DM Mono", monospace;
+
+            font-size: 10px;
+
+            margin-bottom: 8px;
+        }
+
+
+        .work-title {
+
+            font-size: 18px;
+
+            font-weight: 700;
+        }
+
+
+        /* =========================
+           CLIENT WORK
+        ========================= */
+
+        .client-box {
+
+            border: 1px solid var(--border);
+
+            background: var(--card);
+
+            padding: 60px;
+
+            display: grid;
+
+            grid-template-columns: 0.8fr 1.2fr;
+
+            gap: 60px;
+        }
+
+
+        .client-box h3 {
+
+            font-size:
+                clamp(2rem, 4vw, 4rem);
+
+            line-height: 0.95;
+
+            letter-spacing: -0.06em;
+        }
+
+
+        .client-box p {
+
+            color: var(--muted);
+
+            font-size: 14px;
+
+            line-height: 1.8;
+        }
+
+
+        /* =========================
+           SCROLL REVEAL
+        ========================= */
+
+        .reveal {
+
+            opacity: 0;
+
+            transform: translateY(70px);
+
+            filter: blur(6px);
+
+            transition:
+                opacity 0.9s ease,
+                transform 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+                filter 0.9s ease;
+
+            will-change:
+                opacity,
+                transform,
+                filter;
+        }
+
+
+        .reveal.active {
+
+            opacity: 1;
+
+            transform: translateY(0);
+
+            filter: blur(0);
+        }
+
+
+        /* =========================
+           WORK CARD STAGGER
+        ========================= */
+
+        .work-item.reveal:nth-child(1) {
+            transition-delay: 0.05s;
+        }
+
+        .work-item.reveal:nth-child(2) {
+            transition-delay: 0.15s;
+        }
+
+        .work-item.reveal:nth-child(3) {
+            transition-delay: 0.25s;
+        }
+
+        .work-item.reveal:nth-child(4) {
+            transition-delay: 0.35s;
+        }
+
+        .work-item.reveal:nth-child(5) {
+            transition-delay: 0.45s;
+        }
+
+        .work-item.reveal:nth-child(6) {
+            transition-delay: 0.55s;
+        }
+
+
+        /* =========================
+           ACCESSIBILITY
+        ========================= */
+
+        @media (prefers-reduced-motion: reduce) {
+
+            .reveal {
+
+                opacity: 1;
+
+                transform: none;
+
+                filter: none;
+
+                transition: none;
+            }
+
+        }
+
+
+        /* =========================
+           BACK BUTTON
+        ========================= */
+
+        .back-section {
+
+            padding-top: 20px;
+
+            padding-bottom: 100px;
+        }
+
+
+        .back-large {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 12px;
+
+            padding: 15px 22px;
+
+            border: 1px solid var(--border);
+
+            border-radius: 50px;
+
+            font-size: 13px;
+
+            font-weight: 700;
+
+            transition: 0.3s;
+        }
+
+
+        .back-large:hover {
+
+            background: white;
+
+            color: black;
+
+            transform: translateX(-5px);
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+
+            padding: 35px 0;
+
+            border-top:
+                1px solid var(--border);
+
+            color: var(--muted);
+
+            font-size: 11px;
+
+            font-family: "DM Mono", monospace;
+        }
+
+
+        .footer-inner {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            gap: 20px;
+        }
+
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media (max-width: 900px) {
+
+            .project-meta {
+
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+
+            .meta-item:nth-child(2) {
+
+                border-right: none;
+            }
+
+
+            .meta-item:nth-child(-n+2) {
+
+                border-bottom:
+                    1px solid var(--border);
+            }
+
+
+            .overview-grid {
+
+                grid-template-columns: 1fr;
+
+                gap: 50px;
+            }
+
+
+            .client-box {
+
+                grid-template-columns: 1fr;
+
+                gap: 35px;
+            }
+
+
+            .work-grid {
+
+                grid-template-columns: 1fr;
+            }
+
+
+            .experience {
+
+                grid-template-columns:
+                    50px 1fr;
+            }
+
+
+            .experience-date {
+
+                grid-column: 2;
+
+                text-align: left;
+            }
+
+        }
+
+
+        @media (max-width: 600px) {
+
+            section {
+
+                padding: 90px 0;
+            }
+
+
+            .project-hero h1 {
+
+                font-size:
+                    clamp(3.2rem, 16vw, 6rem);
+            }
+
+
+            .project-meta {
+
+                grid-template-columns: 1fr;
+            }
+
+
+            .meta-item {
+
+                border-right: none;
+
+                border-bottom:
+                    1px solid var(--border);
+            }
+
+
+            .meta-item:last-child {
+
+                border-bottom: none;
+            }
+
+
+            .work-item,
+            .work-item img {
+
+                min-height: 350px;
+            }
+
+
+            .client-box {
+
+                padding: 35px 25px;
+            }
+
+
+            .footer-inner {
+
+                flex-direction: column;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         NAVIGATION
+    ========================= -->
+
+    <nav>
+
+        <a
+            href="file:///C:/Users/kamil/OneDrive/Desktop/Html/!DOCTYPE%20html.html#projects"
+            class="logo"
+        >
+            Kamil<span>.</span>Portfolio
+        </a>
+
+
+        <a
+            href="file:///C:/Users/kamil/OneDrive/Desktop/Html/!DOCTYPE%20html.html#projects"
+            class="back-button"
+        >
+            ← Back to Portfolio
+        </a>
+
+    </nav>
+
+
+
+    <!-- =========================
+         HERO
+    ========================= -->
+
+    <section class="project-hero">
+
+        <div class="container reveal">
+
+            <div class="eyebrow">
+                PROJECT / 03
+            </div>
+
+
+            <h1>
+
+                THE
+
+                <span class="outline">
+                    DESIGN'O
+                </span>.
+
+            </h1>
+
+
+            <p class="hero-description">
+
+                Hands-on creative work involving promotional
+                designs for travel agency clients, website
+                content updates and visual adjustments based
+                on client requirements.
+
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         PROJECT META
+    ========================= -->
+
+    <div class="container">
+
+        <div class="project-meta reveal">
+
+
+            <div class="meta-item">
+
+                <div class="meta-label">
+                    ROLE
+                </div>
+
+                <div class="meta-value">
+                    Design & Creative
+                </div>
+
+            </div>
+
+
+            <div class="meta-item">
+
+                <div class="meta-label">
+                    WORK
+                </div>
+
+                <div class="meta-value">
+                    30+ Designs
+                </div>
+
+            </div>
+
+
+            <div class="meta-item">
+
+                <div class="meta-label">
+                    CLIENTS
+                </div>
+
+                <div class="meta-value">
+                    Travel Agencies
+                </div>
+
+            </div>
+
+
+            <div class="meta-item">
+
+                <div class="meta-label">
+                    FOCUS
+                </div>
+
+                <div class="meta-value">
+                    Design & Websites
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =========================
+         OVERVIEW
+    ========================= -->
+
+    <section>
+
+        <div class="container">
+
+            <div class="section-number">
+                01 / OVERVIEW
+            </div>
+
+
+            <h2 class="section-title">
+                Working on<br>real clients.
+            </h2>
+
+
+            <div class="overview-grid reveal">
+
+
+                <div class="overview-text">
+
+                    My work with The Design'O gave me
+                    exposure to
+
+                    <span>
+                        real client requirements,
+                        design execution and website
+                        content updates.
+                    </span>
+
+                    <br><br>
+
+                    I worked on promotional creatives
+                    for travel agency clients while
+                    adapting designs according to
+                    their requirements.
+
+                </div>
+
+
+
+                <div class="overview-details">
+
+
+                    <div class="overview-detail">
+
+                        <span class="detail-label">
+                            DESIGNS
+                        </span>
+
+                        <span class="detail-value">
+                            30+
+                        </span>
+
+                    </div>
+
+
+                    <div class="overview-detail">
+
+                        <span class="detail-label">
+                            INDUSTRY
+                        </span>
+
+                        <span class="detail-value">
+                            Travel
+                        </span>
+
+                    </div>
+
+
+                    <div class="overview-detail">
+
+                        <span class="detail-label">
+                            WORK
+                        </span>
+
+                        <span class="detail-value">
+                            Promotional<br>
+                            Designs
+                        </span>
+
+                    </div>
+
+
+                    <div class="overview-detail">
+
+                        <span class="detail-label">
+                            ADDITIONAL
+                        </span>
+
+                        <span class="detail-value">
+                            Website Content<br>
+                            & Visual Updates
+                        </span>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         WHAT I DID
+    ========================= -->
+
+    <section>
+
+        <div class="container">
+
+            <div class="section-number">
+                02 / EXPERIENCE
+            </div>
+
+
+            <h2 class="section-title">
+                What I<br>worked on.
+            </h2>
+
+
+            <div class="experience-list">
+
+
+                <article class="experience reveal">
+
+                    <div class="experience-index">
+                        01
+                    </div>
+
+
+                    <div>
+
+                        <h3>
+                            Promotional Designs
+                        </h3>
+
+                        <p class="experience-description">
+
+                            Created 30+ promotional posters
+                            and creatives for travel agency
+                            clients, adapting visual content
+                            according to their requirements.
+
+                        </p>
+
+                    </div>
+
+
+                    <div class="experience-date">
+                        30+ CREATIVE ASSETS
+                    </div>
+
+
+                </article>
+
+
+
+                <article class="experience reveal">
+
+                    <div class="experience-index">
+                        02
+                    </div>
+
+
+                    <div>
+
+                        <h3>
+                            Website Content
+                        </h3>
+
+                        <p class="experience-description">
+
+                            Assisted with website content
+                            updates and visual adjustments
+                            based on project and client
+                            requirements.
+
+                        </p>
+
+                    </div>
+
+
+                    <div class="experience-date">
+                        WEB CONTENT
+                    </div>
+
+
+                </article>
+
+
+
+                <article class="experience reveal">
+
+                    <div class="experience-index">
+                        03
+                    </div>
+
+
+                    <div>
+
+                        <h3>
+                            Client Requirements
+                        </h3>
+
+                        <p class="experience-description">
+
+                            Gained practical exposure to
+                            understanding client requirements
+                            and translating them into usable
+                            visual content.
+
+                        </p>
+
+                    </div>
+
+
+                    <div class="experience-date">
+                        CLIENT WORK
+                    </div>
+
+
+                </article>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         SELECTED WORK
+    ========================= -->
+
+    <section>
+
+        <div class="container">
+
+            <div class="section-number">
+                03 / SELECTED WORK
+            </div>
+
+
+            <h2 class="section-title">
+                The work<br>itself.
+            </h2>
+
+
+            <p class="work-intro reveal">
+
+                A selection of promotional creatives
+                and visual work created during my
+                experience with The Design'O.
+
+            </p>
+
+
+            <div class="work-grid">
+
+
+                <!-- DESIGN 01 -->
+
+                <div class="work-item reveal">
+
+                    <img
+                        src="image/designo-01.jpg.jpg"
+                        alt="The Design'O Work 01"
+                    >
+
+                    <div class="work-overlay">
+
+                        <div class="work-number">
+                            WORK / 01
+                        </div>
+
+                        <div class="work-title">
+                            Promotional Creative
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- DESIGN 02 -->
+
+                <div class="work-item reveal">
+
+                    <img
+                        src="image/designo-02.jpg.jpg"
+                        alt="The Design'O Work 02"
+                    >
+
+                    <div class="work-overlay">
+
+                        <div class="work-number">
+                            WORK / 02
+                        </div>
+
+                        <div class="work-title">
+                            Travel Promotion
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- DESIGN 03 -->
+
+                <div class="work-item reveal">
+
+                    <img
+                        src="image/designo-03.jpg.png"
+                        alt="The Design'O Work 03"
+                    >
+
+                    <div class="work-overlay">
+
+                        <div class="work-number">
+                            WORK / 03
+                        </div>
+
+                        <div class="work-title">
+                            Promotional Poster
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- DESIGN 04 -->
+
+                <div class="work-item reveal">
+
+                    <img
+                        src="image/designo-04.jpg.jpg"
+                        alt="The Design'O Work 04"
+                    >
+
+                    <div class="work-overlay">
+
+                        <div class="work-number">
+                            WORK / 04
+                        </div>
+
+                        <div class="work-title">
+                            Social Media Creative
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- DESIGN 05 -->
+
+                <div class="work-item reveal">
+
+                    <img
+                        src="image/designo-05.jpg.jpg"
+                        alt="The Design'O Work 05"
+                    >
+
+                    <div class="work-overlay">
+
+                        <div class="work-number">
+                            WORK / 05
+                        </div>
+
+                        <div class="work-title">
+                            Client Creative
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- DESIGN 06 -->
+
+                <div class="work-item reveal">
+
+                    <img
+                        src="image/designo-06.jpg.png"
+                        alt="The Design'O Work 06"
+                    >
+
+                    <div class="work-overlay">
+
+                        <div class="work-number">
+                            WORK / 06
+                        </div>
+
+                        <div class="work-title">
+                            Promotional Design
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         CLIENT WORK
+    ========================= -->
+
+    <section>
+
+        <div class="container">
+
+            <div class="section-number">
+                04 / TAKEAWAY
+            </div>
+
+
+            <div class="client-box reveal">
+
+
+                <h3>
+                    From brief<br>
+                    to final design.
+                </h3>
+
+
+                <p>
+
+                    The Design'O experience helped me
+                    understand that creative work isn't
+                    only about making something visually
+                    appealing.
+
+                    <br><br>
+
+                    It also means understanding the
+                    requirement, adapting the design,
+                    making revisions and delivering
+                    something that works for the client.
+
+                </p>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         BACK TO PORTFOLIO
+    ========================= -->
+
+    <section class="back-section">
+
+        <div class="container">
+
+            <a
+                href="file:///C:/Users/kamil/OneDrive/Desktop/Html/!DOCTYPE%20html.html#projects"
+                class="back-large"
+            >
+                ← Back to Portfolio
+            </a>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         FOOTER
+    ========================= -->
+
+    <footer>
+
+        <div class="container footer-inner">
+
+            <span>
+                KAMIL AHMAD KHAN © 2026
+            </span>
+
+
+            <span>
+                THE DESIGN'O / PROJECT 03
+            </span>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- =========================
+         SCROLL REVEAL SCRIPT
+    ========================= -->
+
+    <script>
+
+        document.addEventListener("DOMContentLoaded", function () {
+
+            const revealElements =
+                document.querySelectorAll(".reveal");
+
+
+            function revealOnScroll() {
+
+                revealElements.forEach(function (element) {
+
+                    const elementTop =
+                        element.getBoundingClientRect().top;
+
+                    const windowHeight =
+                        window.innerHeight;
+
+
+                    if (elementTop < windowHeight - 100) {
+
+                        element.classList.add("active");
+
+                    }
+
+                });
+
+            }
+
+
+            /* Run when page loads */
+
+            revealOnScroll();
+
+
+            /* Run while scrolling */
+
+            window.addEventListener(
+                "scroll",
+                revealOnScroll,
+                { passive: true }
+            );
+
+        });
+
+    </script>
+
+
+</body>
+
+</html>

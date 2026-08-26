@@ -1,0 +1,1528 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>The Axvi — Kamil Ahmad Khan</title>
+
+    <meta
+        name="description"
+        content="The Axvi project by Kamil Ahmad Khan."
+    >
+
+    <style>
+
+        @import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Manrope:wght@400;500;600;700;800&display=swap');
+
+
+        /* =========================
+           VARIABLES
+        ========================= */
+
+        :root {
+
+            --bg: #070707;
+            --card: #101010;
+            --card-hover: #151515;
+
+            --text: #f4f4f4;
+            --muted: #929292;
+
+            --blue: #1b84be;
+            --blue-light: #48b9f2;
+
+            --border: rgba(255,255,255,0.09);
+
+            --max-width: 1200px;
+        }
+
+
+        /* =========================
+           CUSTOM CURSOR
+        ========================= */
+
+        .cursor {
+
+            width: 12px;
+            height: 12px;
+
+            background: white;
+
+            border-radius: 50%;
+
+            position: fixed;
+
+            pointer-events: none;
+
+            z-index: 9999;
+
+            transform: translate(-50%, -50%);
+
+            transition:
+                width 0.2s ease,
+                height 0.2s ease;
+        }
+
+
+        /* =========================
+           RESET
+        ========================= */
+
+        * {
+
+            margin: 0;
+            padding: 0;
+
+            box-sizing: border-box;
+        }
+
+
+        html {
+
+            scroll-behavior: smooth;
+        }
+
+
+        body {
+
+            background: var(--bg);
+
+            color: var(--text);
+
+            font-family: "Manrope", sans-serif;
+
+            overflow-x: hidden;
+        }
+
+
+        a {
+
+            color: inherit;
+
+            text-decoration: none;
+        }
+
+
+        /* =========================
+           BACKGROUND
+        ========================= */
+
+        body::before {
+
+            content: "";
+
+            position: fixed;
+
+            inset: 0;
+
+            pointer-events: none;
+
+            background:
+
+                radial-gradient(
+                    circle at 80% 10%,
+                    rgba(27,132,190,0.13),
+                    transparent 30%
+                ),
+
+                radial-gradient(
+                    circle at 10% 60%,
+                    rgba(27,132,190,0.05),
+                    transparent 25%
+                );
+
+            z-index: -2;
+        }
+
+
+        body::after {
+
+            content: "";
+
+            position: fixed;
+
+            inset: 0;
+
+            pointer-events: none;
+
+            opacity: 0.035;
+
+            z-index: -1;
+
+            background-image:
+
+                linear-gradient(
+                    rgba(255,255,255,0.4) 1px,
+                    transparent 1px
+                ),
+
+                linear-gradient(
+                    90deg,
+                    rgba(255,255,255,0.4) 1px,
+                    transparent 1px
+                );
+
+            background-size: 70px 70px;
+        }
+
+
+        .container {
+
+            width: min(92%, var(--max-width));
+
+            margin: auto;
+        }
+
+
+        /* =========================
+           NAVBAR
+        ========================= */
+
+        nav {
+
+            position: fixed;
+
+            top: 20px;
+
+            left: 50%;
+
+            transform: translateX(-50%);
+
+            width: min(92%, 1100px);
+
+            padding: 14px 20px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            background: rgba(10,10,10,0.72);
+
+            border: 1px solid var(--border);
+
+            border-radius: 100px;
+
+            backdrop-filter: blur(20px);
+
+            z-index: 1000;
+        }
+
+
+        .logo {
+
+            font-weight: 800;
+
+            letter-spacing: -1px;
+        }
+
+
+        .logo span {
+
+            color: var(--blue-light);
+        }
+
+
+        .back-button {
+
+            padding: 9px 16px;
+
+            border: 1px solid var(--border);
+
+            border-radius: 50px;
+
+            font-size: 12px;
+
+            color: var(--muted);
+
+            transition: 0.3s;
+        }
+
+
+        .back-button:hover {
+
+            background: white;
+
+            color: black;
+
+            transform: translateY(-2px);
+        }
+
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .project-hero {
+
+            min-height: 85vh;
+
+            display: flex;
+
+            align-items: center;
+
+            padding-top: 120px;
+        }
+
+
+        .eyebrow {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+            color: var(--blue-light);
+
+            font-family: "DM Mono", monospace;
+
+            font-size: 12px;
+
+            margin-bottom: 25px;
+        }
+
+
+        .eyebrow::before {
+
+            content: "";
+
+            width: 30px;
+
+            height: 1px;
+
+            background: var(--blue-light);
+        }
+
+
+        .project-hero h1 {
+
+            font-size: clamp(
+                4rem,
+                12vw,
+                10rem
+            );
+
+            line-height: 0.82;
+
+            letter-spacing: -0.08em;
+
+            max-width: 1100px;
+        }
+
+
+        .outline {
+
+            color: transparent;
+
+            -webkit-text-stroke:
+                1px rgba(255,255,255,0.5);
+        }
+
+
+        .hero-description {
+
+            max-width: 700px;
+
+            margin-top: 50px;
+
+            color: var(--muted);
+
+            font-size: 16px;
+
+            line-height: 1.8;
+        }
+
+
+        /* =========================
+           PROJECT META
+        ========================= */
+
+        .project-meta {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            border-top:
+                1px solid var(--border);
+
+            border-bottom:
+                1px solid var(--border);
+        }
+
+
+        .meta-item {
+
+            padding: 35px 25px;
+
+            border-right:
+                1px solid var(--border);
+        }
+
+
+        .meta-item:last-child {
+
+            border-right: none;
+        }
+
+
+        .meta-label {
+
+            color: var(--muted);
+
+            font-family: "DM Mono", monospace;
+
+            font-size: 10px;
+
+            margin-bottom: 12px;
+        }
+
+
+        .meta-value {
+
+            font-size: 15px;
+
+            font-weight: 600;
+        }
+
+
+        /* =========================
+           SECTIONS
+        ========================= */
+
+        section {
+
+            padding: 50px 0;
+        }
+
+
+        .section-number {
+
+            color: var(--blue-light);
+
+            font-family: "DM Mono", monospace;
+
+            font-size: 11px;
+
+            margin-bottom: 15px;
+        }
+
+
+        .section-title {
+
+            font-size:
+                clamp(2.8rem, 6vw, 6rem);
+
+            letter-spacing: -0.07em;
+
+            line-height: 0.9;
+
+            margin-bottom: 60px;
+        }
+
+
+        /* =========================
+           OVERVIEW
+        ========================= */
+
+        .overview-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                1fr 1fr;
+
+            gap: 80px;
+        }
+
+
+        .overview-text {
+
+            font-size:
+                clamp(1.5rem, 3vw, 2.6rem);
+
+            line-height: 1.2;
+
+            letter-spacing: -0.04em;
+        }
+
+
+        .overview-text span {
+
+            color: var(--muted);
+        }
+
+
+        .overview-details {
+
+            display: grid;
+
+            gap: 1px;
+
+            background: var(--border);
+
+            border: 1px solid var(--border);
+        }
+
+
+        .overview-detail {
+
+            background: var(--card);
+
+            padding: 25px;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            gap: 20px;
+        }
+
+
+        .detail-label {
+
+            color: var(--muted);
+
+            font-family: "DM Mono", monospace;
+
+            font-size: 10px;
+        }
+
+
+        .detail-value {
+
+            text-align: right;
+
+            font-size: 14px;
+        }
+
+
+        /* =========================
+           SERVICES
+        ========================= */
+
+        .results {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            border-top:
+                1px solid var(--border);
+
+            border-bottom:
+                1px solid var(--border);
+        }
+
+
+        .result {
+
+            padding: 50px 30px;
+
+            border-right:
+                1px solid var(--border);
+        }
+
+
+        .result:last-child {
+
+            border-right: none;
+        }
+
+
+        .result-number {
+
+            font-size:
+                clamp(3rem, 6vw, 6rem);
+
+            line-height: 1;
+
+            letter-spacing: -0.08em;
+        }
+
+
+        .result-label {
+
+            color: var(--muted);
+
+            margin-top: 15px;
+
+            font-size: 13px;
+        }
+
+
+        /* =========================
+           WORK
+        ========================= */
+
+        .work-intro {
+
+            max-width: 600px;
+
+            color: var(--muted);
+
+            line-height: 1.8;
+
+            margin-top: -30px;
+
+            margin-bottom: 50px;
+        }
+
+
+        .work-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 20px;
+        }
+
+
+        .work-item {
+
+            position: relative;
+
+            overflow: hidden;
+
+            background: var(--card);
+
+            border: 1px solid var(--border);
+
+            min-height: 450px;
+
+            transition: 0.4s;
+        }
+
+
+        .work-item:hover {
+
+            transform: translateY(-8px);
+
+            background: var(--card-hover);
+        }
+
+
+        .work-item img {
+
+            width: 100%;
+
+            height: 100%;
+
+            min-height: 450px;
+
+            object-fit: cover;
+
+            display: block;
+
+            transition: 0.5s;
+        }
+
+
+        .work-item:hover img {
+
+            transform: scale(1.04);
+        }
+
+
+        .work-overlay {
+
+            position: absolute;
+
+            left: 0;
+
+            right: 0;
+
+            bottom: 0;
+
+            padding: 30px;
+
+            background:
+                linear-gradient(
+                    transparent,
+                    rgba(0,0,0,0.9)
+                );
+        }
+
+
+        .work-number {
+
+            color: var(--blue-light);
+
+            font-family: "DM Mono", monospace;
+
+            font-size: 10px;
+
+            margin-bottom: 8px;
+        }
+
+
+        .work-title {
+
+            font-size: 18px;
+
+            font-weight: 700;
+        }
+
+
+        /* =========================
+           SCROLL REVEAL
+        ========================= */
+
+        .reveal {
+
+            opacity: 0;
+
+            transform: translateY(70px);
+
+            filter: blur(6px);
+
+            transition:
+                opacity 0.9s ease,
+                transform 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+                filter 0.9s ease;
+
+            will-change:
+                opacity,
+                transform,
+                filter;
+        }
+
+
+        .reveal.active {
+
+            opacity: 1;
+
+            transform: translateY(0);
+
+            filter: blur(0);
+        }
+
+
+        /* =========================
+           SERVICE STAGGER
+        ========================= */
+
+        .result.reveal:nth-child(1) {
+
+            transition-delay: 0.05s;
+        }
+
+
+        .result.reveal:nth-child(2) {
+
+            transition-delay: 0.15s;
+        }
+
+
+        .result.reveal:nth-child(3) {
+
+            transition-delay: 0.25s;
+        }
+
+
+        .result.reveal:nth-child(4) {
+
+            transition-delay: 0.35s;
+        }
+
+
+        /* =========================
+           ROLE
+        ========================= */
+
+        .role-box {
+
+            border: 1px solid var(--border);
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #0c0c0c,
+                    #101820
+                );
+
+            padding: 70px;
+
+            position: relative;
+
+            overflow: hidden;
+        }
+
+
+        .role-box::after {
+
+            content: "AX";
+
+            position: absolute;
+
+            right: -30px;
+
+            bottom: -100px;
+
+            font-size: 22rem;
+
+            font-weight: 800;
+
+            letter-spacing: -0.1em;
+
+            color:
+                rgba(255,255,255,0.025);
+        }
+
+
+        .role-box h3 {
+
+            font-size:
+                clamp(2rem, 4vw, 4rem);
+
+            letter-spacing: -0.06em;
+
+            margin-bottom: 20px;
+
+            position: relative;
+
+            z-index: 2;
+        }
+
+
+        .role-box p {
+
+            max-width: 700px;
+
+            color: var(--muted);
+
+            line-height: 1.8;
+
+            font-size: 14px;
+
+            position: relative;
+
+            z-index: 2;
+        }
+
+
+        /* =========================
+           BACK BUTTON
+        ========================= */
+
+        .back-section {
+
+            padding-top: 20px;
+
+            padding-bottom: 100px;
+        }
+
+
+        .back-large {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 12px;
+
+            padding: 15px 22px;
+
+            border: 1px solid var(--border);
+
+            border-radius: 50px;
+
+            font-size: 13px;
+
+            font-weight: 700;
+
+            transition: 0.3s;
+        }
+
+
+        .back-large:hover {
+
+            background: white;
+
+            color: black;
+
+            transform: translateX(-5px);
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+
+            padding: 35px 0;
+
+            border-top:
+                1px solid var(--border);
+
+            color: var(--muted);
+
+            font-size: 11px;
+
+            font-family: "DM Mono", monospace;
+        }
+
+
+        .footer-inner {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            gap: 20px;
+        }
+
+
+        /* =========================
+           ACCESSIBILITY
+        ========================= */
+
+        @media (prefers-reduced-motion: reduce) {
+
+            .reveal {
+
+                opacity: 1;
+
+                transform: none;
+
+                filter: none;
+
+                transition: none;
+            }
+
+        }
+
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media (max-width: 900px) {
+
+            .project-meta {
+
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+
+            .meta-item:nth-child(2) {
+
+                border-right: none;
+            }
+
+
+            .meta-item:nth-child(-n+2) {
+
+                border-bottom:
+                    1px solid var(--border);
+            }
+
+
+            .overview-grid {
+
+                grid-template-columns: 1fr;
+
+                gap: 50px;
+            }
+
+
+            .results {
+
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+
+            .result:nth-child(2) {
+
+                border-right: none;
+            }
+
+
+            .result:nth-child(-n+2) {
+
+                border-bottom:
+                    1px solid var(--border);
+            }
+
+
+            .work-grid {
+
+                grid-template-columns: 1fr;
+            }
+
+
+            .role-box {
+
+                padding: 50px 30px;
+            }
+        }
+
+
+        @media (max-width: 600px) {
+
+            section {
+
+                padding: 90px 0;
+            }
+
+
+            .project-hero {
+
+                min-height: 80vh;
+            }
+
+
+            .project-hero h1 {
+
+                font-size:
+                    clamp(3.5rem, 17vw, 6rem);
+            }
+
+
+            .project-meta {
+
+                grid-template-columns: 1fr;
+            }
+
+
+            .meta-item {
+
+                border-right: none;
+
+                border-bottom:
+                    1px solid var(--border);
+            }
+
+
+            .meta-item:last-child {
+
+                border-bottom: none;
+            }
+
+
+            .results {
+
+                grid-template-columns: 1fr;
+            }
+
+
+            .result {
+
+                border-right: none;
+
+                border-bottom:
+                    1px solid var(--border);
+            }
+
+
+            .result:last-child {
+
+                border-bottom: none;
+            }
+
+
+            .work-item,
+            .work-item img {
+
+                min-height: 350px;
+            }
+
+
+            .footer-inner {
+
+                flex-direction: column;
+            }
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+    <div class="cursor"></div>
+
+
+    <!-- =========================
+         NAVIGATION
+    ========================= -->
+
+    <nav>
+
+        <a
+            href="file:///C:/Users/kamil/OneDrive/Desktop/Html/!DOCTYPE%20html.html#projects"
+            class="logo"
+        >
+            Kamil<span>.</span>Portfolio
+        </a>
+
+
+        <a
+            href="file:///C:/Users/kamil/OneDrive/Desktop/Html/!DOCTYPE%20html.html#projects"
+            class="back-button"
+        >
+            ← Back to Portfolio
+        </a>
+
+    </nav>
+
+
+    <!-- =========================
+         HERO
+    ========================= -->
+
+    <section class="project-hero">
+
+        <div class="container reveal">
+
+            <div class="eyebrow">
+                PROJECT / 03
+            </div>
+
+
+            <h1>
+
+                THE <span class="outline">AXVI</span>.
+
+            </h1>
+
+
+            <p class="hero-description">
+
+                A creative services platform focused on
+                web development, graphic design, video
+                editing and motion graphics.
+
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         PROJECT META
+    ========================= -->
+
+    <div class="container">
+
+        <div class="project-meta reveal">
+
+            <div class="meta-item">
+
+                <div class="meta-label">
+                    TYPE
+                </div>
+
+                <div class="meta-value">
+                    Creative Platform
+                </div>
+
+            </div>
+
+
+            <div class="meta-item">
+
+                <div class="meta-label">
+                    SERVICE
+                </div>
+
+                <div class="meta-value">
+                    Digital Creative
+                </div>
+
+            </div>
+
+
+            <div class="meta-item">
+
+                <div class="meta-label">
+                    FOCUS
+                </div>
+
+                <div class="meta-value">
+                    Design & Development
+                </div>
+
+            </div>
+
+
+            <div class="meta-item">
+
+                <div class="meta-label">
+                    OUTPUT
+                </div>
+
+                <div class="meta-value">
+                    Digital Content
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         OVERVIEW
+    ========================= -->
+
+    <section>
+
+        <div class="container">
+
+            <div class="section-number">
+                01 / OVERVIEW
+            </div>
+
+
+            <h2 class="section-title">
+                What is<br>The Axvi.
+            </h2>
+
+
+            <div class="overview-grid reveal">
+
+                <div class="overview-text">
+
+                    The Axvi is a creative platform
+                    built around
+
+                    <span>
+                        web development, graphic design,
+                        video editing and motion graphics.
+                    </span>
+
+                    <br><br>
+
+                    The platform brings multiple digital
+                    creative services together to help
+                    individuals and businesses build
+                    stronger digital experiences.
+
+                </div>
+
+
+                <div class="overview-details">
+
+                    <div class="overview-detail">
+
+                        <span class="detail-label">
+                            SERVICE 01
+                        </span>
+
+                        <span class="detail-value">
+                            Web<br>
+                            Development
+                        </span>
+
+                    </div>
+
+
+                    <div class="overview-detail">
+
+                        <span class="detail-label">
+                            SERVICE 02
+                        </span>
+
+                        <span class="detail-value">
+                            Graphic<br>
+                            Designing
+                        </span>
+
+                    </div>
+
+
+                    <div class="overview-detail">
+
+                        <span class="detail-label">
+                            SERVICE 03
+                        </span>
+
+                        <span class="detail-value">
+                            Video<br>
+                            Editing
+                        </span>
+
+                    </div>
+
+
+                    <div class="overview-detail">
+
+                        <span class="detail-label">
+                            SERVICE 04
+                        </span>
+
+                        <span class="detail-value">
+                            Motion<br>
+                            Graphics
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         SERVICES
+    ========================= -->
+
+    <section>
+
+        <div class="container">
+
+            <div class="section-number">
+                02 / SERVICES
+            </div>
+
+
+            <h2 class="section-title">
+                Four skills.<br>
+                One platform.
+            </h2>
+
+
+            <div class="results">
+
+                <div class="result reveal">
+
+                    <div class="result-number">
+                        01
+                    </div>
+
+                    <div class="result-label">
+                        Web Development
+                        for modern digital
+                        experiences
+                    </div>
+
+                </div>
+
+
+                <div class="result reveal">
+
+                    <div class="result-number">
+                        02
+                    </div>
+
+                    <div class="result-label">
+                        Graphic Designing
+                        for brands and
+                        digital content
+                    </div>
+
+                </div>
+
+
+                <div class="result reveal">
+
+                    <div class="result-number">
+                        03
+                    </div>
+
+                    <div class="result-label">
+                        Video Editing for
+                        engaging digital
+                        content
+                    </div>
+
+                </div>
+
+
+                <div class="result reveal">
+
+                    <div class="result-number">
+                        04
+                    </div>
+
+                    <div class="result-label">
+                        Motion Graphics for
+                        dynamic visual
+                        communication
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         MY ROLE
+    ========================= -->
+
+    <section>
+
+        <div class="container">
+
+            <div class="section-number">
+                03 / MY ROLE
+            </div>
+
+
+            <div class="role-box reveal">
+
+                <h3>
+                    Creating across
+                    multiple mediums.
+                </h3>
+
+
+                <p>
+
+                    The Axvi brings together multiple
+                    creative and digital capabilities
+                    under one platform.
+
+                    The work spans web development,
+                    graphic designing, video editing
+                    and motion graphics, allowing
+                    different forms of digital
+                    communication to be developed
+                    within the same creative ecosystem.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         BACK TO PORTFOLIO
+    ========================= -->
+
+    <section class="back-section">
+
+        <div class="container">
+
+            <a
+                href="file:///C:/Users/kamil/OneDrive/Desktop/Html/!DOCTYPE%20html.html#projects"
+                class="back-large"
+            >
+                ← Back to Portfolio
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         FOOTER
+    ========================= -->
+
+    <footer>
+
+        <div class="container footer-inner">
+
+            <span>
+                KAMIL AHMAD KHAN © 2026
+            </span>
+
+
+            <span>
+                THE AXVI / PROJECT 04
+            </span>
+
+        </div>
+
+    </footer>
+
+
+    <!-- =========================
+         SCROLL REVEAL SCRIPT
+    ========================= -->
+
+    <script>
+
+        document.addEventListener(
+            "DOMContentLoaded",
+            function () {
+
+                const revealElements =
+                    document.querySelectorAll(".reveal");
+
+
+                function revealOnScroll() {
+
+                    revealElements.forEach(
+                        function (element) {
+
+                            const elementTop =
+                                element.getBoundingClientRect().top;
+
+                            const windowHeight =
+                                window.innerHeight;
+
+
+                            if (
+                                elementTop <
+                                windowHeight - 100
+                            ) {
+
+                                element.classList.add(
+                                    "active"
+                                );
+
+                            }
+
+                        }
+                    );
+
+                }
+
+
+                /* Run immediately */
+
+                revealOnScroll();
+
+
+                /* Run while scrolling */
+
+                window.addEventListener(
+                    "scroll",
+                    revealOnScroll,
+                    {
+                        passive: true
+                    }
+                );
+
+            }
+        );
+
+    </script>
+
+
+</body>
+
+</html>
