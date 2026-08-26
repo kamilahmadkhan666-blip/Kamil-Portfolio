@@ -335,6 +335,74 @@
         }
 
 
+/* =========================================
+   PERSONAL AVATAR
+   ========================================= */
+
+.hero-content {
+    position: relative;
+}
+
+.hero-avatar {
+    position: absolute;
+    z-index: 2;
+
+    /* Position in the empty space */
+    right: 6%;
+    top: 10%;
+
+    width: min(26vw, 430px);
+
+    pointer-events: none;
+}
+
+.avatar-image {
+    position: relative;
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+    object-fit: contain;
+
+    /* Slightly softer integration with the design */
+    filter:
+        drop-shadow(0 20px 35px rgba(0, 0, 0, 0.45))
+        drop-shadow(0 0 30px rgba(145, 75, 220, 0.25));
+
+    animation: avatarFloat 5s ease-in-out infinite;
+}
+
+.avatar-glow {
+    position: absolute;
+
+    width: 70%;
+    height: 55%;
+
+    top: 15%;
+    left: 15%;
+
+    background: rgba(145, 75, 220, 0.38);
+
+    filter: blur(70px);
+
+    border-radius: 50%;
+
+    z-index: -1;
+}
+
+@keyframes avatarFloat {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+
         /* =========================
            SECTION
         ========================= */
@@ -2266,10 +2334,18 @@ body,
                         .
                     </span>
 
-                </h1>
+                </h1><!-- PERSONAL AVATAR -->
+<div class="hero-avatar" aria-hidden="true">
+    <div class="avatar-glow"></div>
 
+    <img
+        src="Image/kamil-avatar.png"
+        alt=""
+        class="avatar-image"
+    >
+</div>
 
-                <div class="hero-bottom reveal">
+<div class="hero-bottom reveal">	
 
                     <p class="hero-description">
 
@@ -5166,6 +5242,34 @@ document.getElementById("contactForm").addEventListener("submit", async function
     }
 });
 </script>
+
+@media (max-width: 900px) {
+    .hero-avatar {
+        width: 260px;
+        right: 0;
+        top: 42%;
+        opacity: 0.9;
+    }
+}
+
+@media (max-width: 600px) {
+    .hero-avatar {
+        position: relative;
+
+        width: 220px;
+
+        right: auto;
+        top: auto;
+
+        margin: -20px 0 20px auto;
+
+        opacity: 0.85;
+    }
+
+    .avatar-glow {
+        filter: blur(50px);
+    }
+}
 
 </body>
 </html>
