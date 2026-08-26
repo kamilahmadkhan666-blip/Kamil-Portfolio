@@ -59,6 +59,10 @@ ${message}`
     }
 });
 
+const fs = require("fs");
+
+console.log("ROOT FILES:", fs.readdirSync(path.join(__dirname, "..")));
+
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
 });
